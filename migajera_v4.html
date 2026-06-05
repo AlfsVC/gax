@@ -1,0 +1,1800 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Un mensaje especial para ti 💝">
+<meta name="theme-color" content="#ff3cac">
+<title>✨ 💝 Para Ti 💝 ✨</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75'>💝</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Raleway:wght@300;400;600&family=Cormorant+Garamond:ital,wght@1,400;1,600&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+html, body { width:100%; height:100%; overflow:hidden; background:#000; font-family:'Raleway',sans-serif; -webkit-tap-highlight-color:transparent; }
+
+.stars-bg {
+  position:fixed; inset:0; z-index:0; pointer-events:none;
+  background:
+    radial-gradient(1.5px 1.5px at 5% 15%, rgba(255,255,255,0.9) 0%, transparent 100%),
+    radial-gradient(1px 1px at 15% 40%, rgba(255,200,220,0.8) 0%, transparent 100%),
+    radial-gradient(2px 2px at 25% 70%, rgba(255,255,255,0.7) 0%, transparent 100%),
+    radial-gradient(1px 1px at 35% 25%, rgba(200,150,255,0.9) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 45% 85%, rgba(255,255,255,0.8) 0%, transparent 100%),
+    radial-gradient(1px 1px at 55% 10%, rgba(255,220,100,0.9) 0%, transparent 100%),
+    radial-gradient(1px 1px at 65% 55%, rgba(255,255,255,0.7) 0%, transparent 100%),
+    radial-gradient(2px 2px at 75% 30%, rgba(180,220,255,0.8) 0%, transparent 100%),
+    radial-gradient(1px 1px at 85% 75%, rgba(255,255,255,0.9) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 92% 45%, rgba(255,180,220,0.8) 0%, transparent 100%),
+    radial-gradient(1px 1px at 10% 90%, rgba(255,255,255,0.6) 0%, transparent 100%),
+    radial-gradient(1px 1px at 50% 50%, rgba(200,200,255,0.5) 0%, transparent 100%);
+  animation: twinkle 4s ease-in-out infinite alternate;
+}
+@keyframes twinkle { 0%{opacity:0.8} 100%{opacity:1} }
+
+/* ======== SCREEN 1 ======== */
+#screen1 {
+  position:fixed; inset:0; display:flex; flex-direction:column;
+  align-items:center; justify-content:center; z-index:10;
+  background: radial-gradient(ellipse at center, #200015 0%, #08000f 60%, #000 100%);
+  transition: opacity 0.6s;
+}
+.pregunta {
+  font-family:'Playfair Display',serif;
+  font-size: clamp(2.2rem, 9vw, 5rem);
+  font-weight:900; color:#fff;
+  text-shadow: 0 0 40px rgba(255,60,150,0.9), 0 0 100px rgba(255,60,150,0.4);
+  letter-spacing:0.05em; text-align:center;
+  animation: glow 2.5s ease-in-out infinite;
+  margin-bottom:0.6rem;
+}
+.corazon-deco {
+  font-size:clamp(2.5rem,7vw,4rem);
+  animation: latido 1.1s ease-in-out infinite;
+  display:block; margin-bottom:1.5rem; text-align:center;
+}
+.subtitulo {
+  color:rgba(255,170,210,0.65); font-size:0.9rem;
+  letter-spacing:0.35em; text-align:center; margin-bottom:2.8rem;
+}
+.btns-row {
+  display:flex; gap:1.5rem; justify-content:center; align-items:center;
+}
+.btn-si {
+  padding:1rem 3rem; font-size:1.25rem; font-family:'Raleway',sans-serif; font-weight:700;
+  background:linear-gradient(135deg,#ff3cac,#c1007e);
+  color:#fff; border:none; border-radius:50px; cursor:pointer;
+  box-shadow:0 0 30px rgba(255,60,172,0.7); letter-spacing:0.1em;
+  transition:transform 0.2s,box-shadow 0.2s;
+}
+.btn-si:hover { transform:scale(1.08); box-shadow:0 0 55px rgba(255,60,172,1); }
+.btn-no {
+  padding:0.9rem 2.2rem; font-size:1.1rem; font-family:'Raleway',sans-serif; font-weight:400;
+  background:rgba(255,255,255,0.07); color:rgba(255,255,255,0.75);
+  border:1.5px solid rgba(255,255,255,0.25); border-radius:50px; cursor:pointer;
+  letter-spacing:0.05em; transition:background 0.2s,transform 0.15s;
+  user-select:none;
+}
+.btn-no:hover { background:rgba(255,255,255,0.13); }
+
+@keyframes glow { 0%,100%{text-shadow:0 0 40px rgba(255,60,150,0.9)} 50%{text-shadow:0 0 80px rgba(255,60,150,1),0 0 140px rgba(255,60,150,0.5)} }
+@keyframes latido { 0%,100%{transform:scale(1)} 50%{transform:scale(1.18)} }
+
+/* ======== SCREEN 2 ======== */
+#screen2 {
+  position:fixed; inset:0; display:none; flex-direction:column;
+  align-items:center; justify-content:center; z-index:10;
+  background:radial-gradient(ellipse at center,#0a001a 0%,#000 70%);
+}
+.sabia-emoji { font-size:3.5rem; display:block; text-align:center;
+  animation:fadeInUp 0.8s ease forwards; }
+.sabia-texto {
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.6rem,5.5vw,3.2rem); color:#fff;
+  text-shadow:0 0 40px rgba(160,100,255,0.9); margin:1.2rem 0 2.8rem;
+  text-align:center; line-height:1.4;
+  opacity:0; animation:fadeInUp 0.9s ease forwards 0.3s;
+}
+.btn-regalo {
+  padding:1.2rem 3.5rem; font-size:1.3rem; font-family:'Raleway',sans-serif; font-weight:700;
+  background:linear-gradient(135deg,#784ba0,#2b86c5,#ff3cac);
+  background-size:200%; color:#fff; border:none; border-radius:50px; cursor:pointer;
+  box-shadow:0 0 40px rgba(120,75,160,0.7); letter-spacing:0.1em;
+  animation:gradShift 3s linear infinite, fadeInUp 1s ease forwards 0.7s;
+  opacity:0; transition:transform 0.2s;
+}
+.btn-regalo:hover { transform:scale(1.06); }
+@keyframes fadeInUp { from{opacity:0;transform:translateY(28px)} to{opacity:1;transform:translateY(0)} }
+@keyframes gradShift { 0%{background-position:0%} 100%{background-position:200%} }
+
+/* ======== SCREEN 3 ======== */
+#screen3 { position:fixed; inset:0; display:none; z-index:10; }
+#universe-canvas { display:block; width:100%; height:100%; cursor:grab; touch-action:none; }
+#universe-canvas:active { cursor:grabbing; }
+
+/* Music panel */
+#music-panel {
+  position:absolute; bottom:20px; left:50%; transform:translateX(-50%);
+  background:linear-gradient(135deg, rgba(8,0,20,0.92), rgba(15,0,35,0.95));
+  border:1px solid rgba(255,60,172,0.3);
+  backdrop-filter:blur(24px); -webkit-backdrop-filter:blur(24px);
+  border-radius:20px;
+  padding:14px 18px; display:flex; align-items:center; gap:12px;
+  z-index:20;
+  box-shadow: 0 0 40px rgba(255,60,172,0.15), 0 8px 32px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.06);
+  min-width:260px; max-width:calc(100vw - 32px);
+}
+
+/* Equalizer bars decoration */
+#music-eq {
+  display:flex; align-items:flex-end; gap:2px; height:20px; flex-shrink:0;
+}
+.eq-bar {
+  width:3px; border-radius:2px;
+  background:linear-gradient(to top, #ff3cac, #784ba0);
+  animation: eqBounce var(--s) ease-in-out infinite alternate;
+  transform-origin:bottom;
+}
+@keyframes eqBounce { 0%{height:4px} 100%{height:var(--h)} }
+#music-eq.paused .eq-bar { animation-play-state:paused; height:4px !important; }
+
+.music-info {
+  display:flex; flex-direction:column; gap:2px; flex:1; min-width:0;
+}
+.music-track-label {
+  color:rgba(255,140,200,0.5); font-size:9px; letter-spacing:0.25em;
+  text-transform:uppercase; font-family:'Raleway',sans-serif;
+}
+#music-filename {
+  color:rgba(255,210,240,0.9); font-size:12px;
+  font-family:'Raleway',sans-serif; letter-spacing:0.02em; font-weight:600;
+  max-width:150px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+}
+
+/* Volume row */
+.music-vol-row {
+  display:flex; align-items:center; gap:6px; margin-top:4px;
+}
+.vol-icon { color:rgba(255,100,180,0.5); font-size:10px; }
+#music-vol {
+  -webkit-appearance:none; flex:1; height:3px; border-radius:2px;
+  background:linear-gradient(to right, rgba(255,60,172,0.6) calc(var(--val,80)*1%), rgba(255,255,255,0.1) calc(var(--val,80)*1%));
+  outline:none; cursor:pointer;
+}
+#music-vol::-webkit-slider-thumb {
+  -webkit-appearance:none; width:12px; height:12px; border-radius:50%;
+  background:linear-gradient(135deg,#ff3cac,#c1007e);
+  cursor:pointer; box-shadow:0 0 8px rgba(255,60,172,0.8);
+}
+#music-vol::-moz-range-thumb {
+  width:12px; height:12px; border-radius:50%; border:none;
+  background:linear-gradient(135deg,#ff3cac,#c1007e);
+}
+
+.music-controls {
+  display:flex; align-items:center; gap:8px; flex-shrink:0;
+}
+
+#btn-playpause {
+  width:42px; height:42px; border-radius:50%;
+  background:linear-gradient(135deg,#ff3cac,#784ba0);
+  color:#fff; border:none; cursor:pointer; font-size:15px;
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:0 0 20px rgba(255,60,172,0.6), 0 4px 12px rgba(0,0,0,0.4);
+  transition:transform 0.15s,box-shadow 0.15s;
+  flex-shrink:0; position:relative;
+}
+#btn-playpause:hover, #btn-playpause:active { transform:scale(1.1); box-shadow:0 0 35px rgba(255,60,172,0.9); }
+#btn-playpause.playing { background:linear-gradient(135deg,#784ba0,#2b86c5); }
+/* Pulse ring when playing */
+#btn-playpause.playing::before {
+  content:''; position:absolute; inset:-4px; border-radius:50%;
+  border:1.5px solid rgba(255,60,172,0.4);
+  animation:ringPulse 1.8s ease-in-out infinite;
+}
+@keyframes ringPulse { 0%,100%{transform:scale(1);opacity:0.7} 50%{transform:scale(1.18);opacity:0} }
+
+label.music-file-label {
+  display:flex; align-items:center; justify-content:center;
+  width:32px; height:32px; border-radius:50%;
+  background:rgba(255,60,172,0.12); border:1px solid rgba(255,60,172,0.25);
+  color:rgba(255,160,210,0.8); font-size:14px;
+  cursor:pointer; transition:all 0.2s; flex-shrink:0;
+}
+label.music-file-label:hover { background:rgba(255,60,172,0.25); border-color:rgba(255,60,172,0.6); }
+label.music-file-label input { display:none; }
+
+#hint {
+  position:absolute; top:16px; left:50%; transform:translateX(-50%);
+  color:rgba(255,180,220,0.55); font-size:0.72rem; letter-spacing:0.2em;
+  text-align:center; pointer-events:none; animation:hintPulse 3s ease-in-out infinite;
+  white-space:nowrap;
+}
+@keyframes hintPulse { 0%,100%{opacity:0.55} 50%{opacity:0.9} }
+
+/* ======== MODAL ======== */
+#frase-modal {
+  position:fixed; inset:0; z-index:100;
+  display:none; align-items:center; justify-content:center;
+  padding:16px;
+}
+#frase-modal.open { display:flex; }
+.modal-backdrop {
+  position:absolute; inset:0;
+  background:rgba(0,0,0,0.88);
+  backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px);
+  animation:backdropIn 0.35s ease;
+}
+@keyframes backdropIn { from{opacity:0} to{opacity:1} }
+
+.modal-card {
+  position:relative; z-index:2;
+  background: linear-gradient(160deg, rgba(28,0,48,0.98) 0%, rgba(12,0,28,0.99) 50%, rgba(20,0,38,0.98) 100%);
+  border:1px solid rgba(255,60,172,0.22);
+  border-radius:24px; padding:44px 36px 36px;
+  max-width:520px; width:100%; text-align:center;
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.04),
+    0 0 50px rgba(255,60,172,0.22),
+    0 0 100px rgba(120,75,160,0.12),
+    0 24px 60px rgba(0,0,0,0.7),
+    inset 0 1px 0 rgba(255,255,255,0.08);
+  animation:modalIn 0.4s cubic-bezier(0.175,0.885,0.32,1.275);
+  overflow:hidden;
+}
+@keyframes modalIn { from{opacity:0;transform:scale(0.78) translateY(24px)} to{opacity:1;transform:scale(1) translateY(0)} }
+
+/* Top glow accent */
+.modal-card::before {
+  content:''; position:absolute; top:0; left:20%; right:20%; height:1px;
+  background:linear-gradient(90deg, transparent, rgba(255,60,172,0.7), rgba(180,100,255,0.7), transparent);
+}
+/* Bottom subtle glow */
+.modal-card::after {
+  content:''; position:absolute; bottom:-30px; left:50%; transform:translateX(-50%);
+  width:200px; height:60px; border-radius:50%;
+  background:rgba(255,60,172,0.08); filter:blur(20px); pointer-events:none;
+}
+
+.modal-deco-top {
+  display:block; font-size:3.2rem; margin-bottom:1rem;
+  animation:floatDeco 3s ease-in-out infinite;
+  filter:drop-shadow(0 0 16px rgba(255,100,200,0.5));
+}
+@keyframes floatDeco { 0%,100%{transform:translateY(0) scale(1)} 50%{transform:translateY(-8px) scale(1.05)} }
+
+/* Category tag */
+.modal-tag {
+  display:inline-block; padding:3px 12px; border-radius:20px; margin-bottom:16px;
+  background:linear-gradient(135deg, rgba(255,60,172,0.15), rgba(120,75,160,0.15));
+  border:1px solid rgba(255,60,172,0.2);
+  color:rgba(255,140,200,0.7); font-size:9px; letter-spacing:0.3em;
+  font-family:'Raleway',sans-serif; text-transform:uppercase;
+}
+
+.modal-frase {
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.15rem,3.2vw,1.75rem);
+  font-style:italic; font-weight:600;
+  color:#fff;
+  line-height:1.7; letter-spacing:0.01em;
+  text-shadow:0 2px 20px rgba(255,100,200,0.25);
+  margin-bottom:24px;
+  position:relative;
+}
+/* Quote marks */
+.modal-frase::before {
+  content:'\201C'; position:absolute; top:-10px; left:-4px;
+  font-size:3.5rem; color:rgba(255,60,172,0.15); font-family:'Cormorant Garamond',serif;
+  line-height:1; pointer-events:none;
+}
+
+.modal-divider {
+  display:flex; align-items:center; gap:10px; margin-bottom:16px;
+}
+.modal-divider-line {
+  flex:1; height:1px;
+  background:linear-gradient(90deg, transparent, rgba(255,60,172,0.3), transparent);
+}
+.modal-divider-dot {
+  width:4px; height:4px; border-radius:50%;
+  background:rgba(255,60,172,0.6);
+  box-shadow:0 0 6px rgba(255,60,172,0.8);
+}
+
+.modal-firma {
+  color:rgba(255,150,200,0.45); font-size:0.72rem;
+  letter-spacing:0.35em; font-family:'Raleway',sans-serif;
+}
+.modal-close {
+  position:absolute; top:16px; right:16px;
+  width:32px; height:32px; border-radius:50%;
+  background:rgba(255,60,172,0.08); border:1px solid rgba(255,60,172,0.18);
+  color:rgba(255,100,200,0.5); font-size:13px; cursor:pointer;
+  transition:all 0.2s; display:flex; align-items:center; justify-content:center;
+  line-height:1;
+}
+.modal-close:hover { color:#fff; background:rgba(255,60,172,0.25); border-color:rgba(255,60,172,0.5); transform:rotate(90deg); }
+
+.modal-stars {
+  position:absolute; inset:0; overflow:hidden; border-radius:24px; pointer-events:none;
+}
+.modal-star {
+  position:absolute; width:2px; height:2px; border-radius:50%;
+  background:#fff; animation:starTwinkle var(--dur) ease-in-out infinite;
+  opacity:var(--op);
+}
+@keyframes starTwinkle { 0%,100%{opacity:var(--op)} 50%{opacity:calc(var(--op)*0.15)} }
+
+/* Mobile modal */
+@media (max-width:480px) {
+  .modal-card { padding:36px 24px 28px; border-radius:20px; }
+  .modal-frase { font-size:clamp(1.05rem, 4.2vw, 1.4rem); }
+  .modal-deco-top { font-size:2.6rem; }
+}
+
+/* ======== CURSOR CLICK HINT ======== */
+.click-hint {
+  position:absolute; bottom:90px; right:20px;
+  color:rgba(255,180,220,0.4); font-size:0.65rem; letter-spacing:0.2em;
+  text-align:right; pointer-events:none; animation:hintPulse 4s ease-in-out infinite;
+}
+
+/* ======== MOBILE RESPONSIVE ======== */
+@media (max-width:600px) {
+  /* Screen 1 */
+  .pregunta { font-size:clamp(1.8rem, 11vw, 3rem) !important; }
+  .corazon-deco { font-size:clamp(2rem, 8vw, 3rem); }
+  .btn-si { padding:0.85rem 2.2rem; font-size:1.1rem; }
+  .btn-no { padding:0.75rem 1.6rem; font-size:0.95rem; }
+  .btns-row { gap:1rem; }
+
+  /* Screen 2 */
+  .sabia-texto { font-size:clamp(1.4rem, 7vw, 2.2rem); }
+  .btn-regalo { padding:1rem 2.5rem; font-size:1.1rem; }
+
+  /* Screen 3 hints */
+  #hint { font-size:0.62rem; letter-spacing:0.12em; top:12px; padding:0 8px; }
+  .click-hint { display:none; }
+
+  /* Music panel mobile */
+  #music-panel {
+    bottom:12px; padding:10px 14px; gap:10px; min-width:unset;
+    border-radius:16px;
+  }
+  #music-filename { max-width:100px; font-size:11px; }
+  #btn-playpause { width:38px; height:38px; font-size:13px; }
+  #music-eq { height:16px; }
+}
+
+@media (max-width:400px) {
+  .pregunta { font-size:clamp(1.6rem, 12vw, 2.4rem) !important; }
+  #music-filename { max-width:80px; font-size:10px; }
+  .music-track-label { display:none; }
+}
+</style>
+</head>
+<body>
+
+<!-- SCREEN 1 -->
+<div id="screen1">
+  <div class="stars-bg"></div>
+  <div style="position:relative;z-index:2;text-align:center;padding:2rem;">
+    <span class="corazon-deco">💗</span>
+    <div class="pregunta">¿ERES MIGAJERA?</div>
+    <p class="subtitulo">sé honesta...</p>
+    <div class="btns-row">
+      <button class="btn-si" onclick="dijoSi()">Sí 💝</button>
+      <button class="btn-no" id="btnNo" onclick="moverNo(this)">No 🙄</button>
+    </div>
+  </div>
+</div>
+
+<!-- SCREEN 2 -->
+<div id="screen2">
+  <div class="stars-bg"></div>
+  <div style="position:relative;z-index:2;text-align:center;padding:2rem;">
+    <span class="sabia-emoji">😏✨</span>
+    <div class="sabia-texto">Sabía que<br>dirías que sí...</div>
+    <button class="btn-regalo" onclick="abrirRegalo()">🎁 Tienes un regalo</button>
+  </div>
+</div>
+
+<!-- SCREEN 3 -->
+<div id="screen3">
+  <canvas id="universe-canvas"></canvas>
+  <div id="hint">✨ Arrastra para explorar · Pellizca para acercar · Toca las frases</div>
+  <div class="click-hint">TOCA UNA FRASE ✦</div>
+
+  <!-- MUSIC PANEL -->
+  <div id="music-panel">
+    <!-- Equalizer bars -->
+    <div id="music-eq" class="paused">
+      <div class="eq-bar" style="--s:0.6s;--h:18px"></div>
+      <div class="eq-bar" style="--s:0.8s;--h:14px;animation-delay:0.1s"></div>
+      <div class="eq-bar" style="--s:0.5s;--h:20px;animation-delay:0.2s"></div>
+      <div class="eq-bar" style="--s:0.9s;--h:12px;animation-delay:0.05s"></div>
+      <div class="eq-bar" style="--s:0.7s;--h:16px;animation-delay:0.15s"></div>
+    </div>
+    <!-- Info -->
+    <div class="music-info">
+      <span class="music-track-label">♫ reproduciendo</span>
+      <span id="music-filename">ninguna canción...</span>
+      <div class="music-vol-row">
+        <span class="vol-icon">🔈</span>
+        <input type="range" id="music-vol" min="0" max="1" step="0.05" value="0.8" oninput="cambiarVolumen(this.value)">
+      </div>
+    </div>
+    <!-- Controls -->
+    <div class="music-controls">
+      <label class="music-file-label" title="Cargar canción">
+        🎵
+        <input type="file" id="music-file-input" accept="audio/*" onchange="cargarMusica(this)">
+      </label>
+      <button id="btn-playpause" onclick="toggleMusica()">▶</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL FRASE -->
+<div id="frase-modal" onclick="cerrarModal(event)">
+  <div class="modal-backdrop"></div>
+  <div class="modal-card" id="modal-card">
+    <div class="modal-stars" id="modal-stars"></div>
+    <button class="modal-close" onclick="cerrarModal()">✕</button>
+    <span class="modal-deco-top" id="modal-emoji">💫</span>
+    <div class="modal-tag">para ti ✦</div>
+    <div class="modal-frase" id="modal-texto">frase aquí</div>
+    <div class="modal-divider">
+      <div class="modal-divider-line"></div>
+      <div class="modal-divider-dot"></div>
+      <div class="modal-divider-line"></div>
+    </div>
+    <div class="modal-firma">—  con cariño ✦</div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+
+/* ======== SCREEN 1 ======== */
+let noClicks = 0;
+
+function moverNo(btn) {
+  noClicks++;
+  const reduction = Math.pow(0.85, noClicks - 1);
+  const fontSize = 1.1 * reduction;
+  const padding = 0.9 * reduction;
+  const opacity = Math.max(0, 1 - (noClicks * 0.15));
+  
+  btn.style.fontSize  = fontSize + 'rem';
+  btn.style.padding   = padding + 'rem ' + (padding * 2.44) + 'rem';
+  btn.style.opacity   = opacity;
+  btn.style.position = 'fixed';
+  btn.style.transition = 'all 0.25s ease';
+  const bw = btn.offsetWidth  || 100;
+  const bh = btn.offsetHeight || 44;
+  const maxX = window.innerWidth  - bw - 20;
+  const maxY = window.innerHeight - bh - 20;
+  btn.style.left = (20 + Math.random() * maxX) + 'px';
+  btn.style.top  = (20 + Math.random() * maxY) + 'px';
+  btn.style.zIndex = 999;
+  if (opacity <= 0) {
+    btn.style.pointerEvents = 'none';
+  }
+}
+
+function dijoSi() {
+  const s1 = document.getElementById('screen1');
+  s1.style.opacity = '0';
+  setTimeout(()=>{ s1.style.display='none'; document.getElementById('screen2').style.display='flex'; }, 600);
+}
+
+function abrirRegalo() {
+  document.getElementById('screen2').style.display='none';
+  document.getElementById('screen3').style.display='block';
+  initUniverse();
+  
+  // Cargar y reproducir automáticamente slow dancing in the dark.mp3
+  if (!audioEl) {
+    audioEl = new Audio('Radiohead_-_Let_Down_Remastered_(mp3.pm).mp3');
+    audioEl.loop = true;
+    audioEl.volume = parseFloat(document.getElementById('music-vol').value);
+    audioEl.play().then(() => {
+      isPlaying = true;
+      document.getElementById('music-filename').textContent = 'Radiohead • Let Down Remastered';
+      document.getElementById('btn-playpause').textContent = '⏸';
+      document.getElementById('btn-playpause').classList.add('playing');
+      document.getElementById('music-eq').classList.remove('paused');
+    }).catch(() => {
+      document.getElementById('music-filename').textContent = '❌ No se pudo reproducir';
+      isPlaying = false;
+    });
+  }
+}
+
+/* ======== MUSIC ======== */
+let audioEl = null;
+let isPlaying = false;
+
+function cargarMusica(input) {
+  const file = input.files[0];
+  if (!file) return;
+  const name = file.name.replace(/\.[^.]+$/, '');
+  document.getElementById('music-filename').textContent = name.length > 24 ? name.slice(0,22)+'…' : name;
+
+  if (audioEl) { audioEl.pause(); audioEl = null; }
+  audioEl = new Audio(URL.createObjectURL(file));
+  audioEl.loop = true;
+  audioEl.volume = parseFloat(document.getElementById('music-vol').value);
+  audioEl.play().then(() => {
+    isPlaying = true;
+    document.getElementById('btn-playpause').textContent = '⏸';
+    document.getElementById('btn-playpause').classList.add('playing');
+    document.getElementById('music-eq').classList.remove('paused');
+  }).catch(() => {
+    isPlaying = false;
+    document.getElementById('music-filename').textContent = '❌ No se pudo reproducir';
+    document.getElementById('btn-playpause').textContent = '▶';
+    document.getElementById('btn-playpause').classList.remove('playing');
+    document.getElementById('music-eq').classList.add('paused');
+  });
+}
+
+function toggleMusica() {
+  if (!audioEl) {
+    document.getElementById('music-filename').textContent = '⚠ Elige una canción primero';
+    return;
+  }
+  if (isPlaying) {
+    audioEl.pause();
+    isPlaying = false;
+    document.getElementById('btn-playpause').textContent = '▶';
+    document.getElementById('btn-playpause').classList.remove('playing');
+    document.getElementById('music-eq').classList.add('paused');
+  } else {
+    audioEl.play().then(() => {
+      isPlaying = true;
+      document.getElementById('btn-playpause').textContent = '⏸';
+      document.getElementById('btn-playpause').classList.add('playing');
+      document.getElementById('music-eq').classList.remove('paused');
+    }).catch(() => {
+      document.getElementById('music-filename').textContent = '❌ No se pudo reproducir';
+    });
+  }
+}
+
+function cambiarVolumen(v) {
+  if (audioEl) audioEl.volume = parseFloat(v);
+  const pct = Math.round(parseFloat(v) * 100);
+  document.getElementById('music-vol').style.setProperty('--val', pct);
+}
+
+/* ======== MODAL ======== */
+// Frases con texto largo y bonito
+const frasesModal = [
+  { emoji:'💛', texto:'Eres mi fortuna más grande, el tesoro que ningún mapa podría señalar. Encontrarte fue el regalo que no pedí pero que cambió todo.' },
+  { emoji:'🌌', texto:'Eres mi universo completo, la galaxia que habito cada vez que pienso en ti. Cada estrella que brilla lleva tu nombre escrito en luz.' },
+  { emoji:'✨', texto:'Siempre serás tú, en cada versión de la historia que pueda imaginar. Si pudiera elegir mil veces, siempre te elegiría a ti.' },
+  { emoji:'🌸', texto:'Eres mi calma en medio del caos, el suspiro que sale solo cuando todo pesa demasiado. Contigo respiro distinto, más profundo, más libre.' },
+  { emoji:'💫', texto:'Brillas de una manera que no tiene comparación, como esa estrella que aparece primero al anochecer y que nadie puede ignorar.' },
+  { emoji:'🥰', texto:'Hay una ternura en ti que me desarmó desde el primer momento. No necesito palabras grandes para decirte que eres exactamente lo que buscaba.' },
+  { emoji:'📸', texto:'Hay recuerdos tuyos guardados en mí que no caben en ninguna foto, sensaciones que solo existen cuando estás cerca y que me acompañan cuando no estás.' },
+  { emoji:'🌟', texto:'Eres mi esperanza en los días que el cielo se nubla demasiado. La razón por la que creo que las cosas buenas siguen pasando y seguirán pasando.' },
+  { emoji:'🎉', texto:'Contigo la alegría tiene otro sabor, como cuando ríes por algo tonto y de repente el mundo parece más liviano y el día mucho más bonito.' },
+  { emoji:'🍬', texto:'Hay una dulzura en cómo existes que me llega sin que lo intentes. No necesito azúcar cuando te tengo cerca, tú endulzas todo sin proponértelo.' },
+  { emoji:'🪞', texto:'Eres mi reflejo en las cosas más bonitas. Cuando veo bondad en el mundo, cuando algo me emociona, casi siempre pienso en ti primero.' },
+  { emoji:'♾️', texto:'Lo que siento por ti no tiene fecha de caducidad ni borrador. Es un amor de los que no caben en una frase, de los que solo se entienden viviéndolos.' },
+  { emoji:'☁️', texto:'Eres mi cielo en los dos sentidos: lo más alto que conozco y también el lugar donde me siento en casa, a salvo, sin miedo a caer.' },
+  { emoji:'🦋', texto:'Me enseñaste lo que es la libertad de querer sin miedo, de dar sin calcular. Eres la mariposa que llegó sin avisar y ya no quiero que se vaya.' },
+  { emoji:'🎵', texto:'Hay canciones que ahora ya no puedo escuchar sin pensar en ti. Te volviste la melodía que suena de fondo en mis mejores momentos.' },
+  { emoji:'🌺', texto:'Eres mi paraíso personal, ese lugar al que quiero volver cuando el mundo se pone ruidoso y necesito encontrar algo verdadero y tranquilo.' },
+  { emoji:'✨', texto:'Hay magia en cómo me haces sentir, en cómo con una sola mirada cambias completamente la temperatura de un cuarto y de un corazón.' },
+  { emoji:'🌷', texto:'Tu ternura tiene el poder de sanar cosas que yo ni siquiera sabía que estaban rotas. Sin darte cuenta, me fuiste reparando con cada detalle.' },
+  { emoji:'🗺️', texto:'Eres mi destino favorito, el que elegiría incluso si me dieran un mapa con todos los caminos del mundo y libertad absoluta de ir a donde quisiera.' },
+  { emoji:'💤', texto:'En los sueños más bonitos que recuerdo, de alguna forma siempre apareces tú. Como si mi mente supiera antes que yo lo que necesita para descansar.' },
+  { emoji:'⭐', texto:'Eres mi estrella de referencia, la que busco cuando me pierdo. Con solo saber que existes, ya sé en qué dirección quiero caminar.' },
+  { emoji:'🤗', texto:'Tus abrazos tienen el poder de hacer que todo lo que parecía urgente deje de serlo. En ese espacio contigo, el tiempo se vuelve completamente mío.' },
+  { emoji:'♾️', texto:'La eternidad me parece poco para todo lo que quisiera decirte y sentir. Ojalá exista una versión del tiempo donde no haya que despedirse nunca.' },
+  { emoji:'🌸', texto:'Eres la flor que no esperaba encontrar en el camino, la que me hizo detenerme y recordar que hay cosas que merecen toda la atención del mundo.' },
+  { emoji:'💖', texto:'La felicidad contigo no es ruidosa ni espectacular. Es esa paz tranquila de saber que estás ahí, que eres real, y que eso cambia todo.' },
+  { emoji:'😊', texto:'Tu risa es mi sonido favorito del mundo. Podría escucharla en bucle durante horas y seguiría sintiéndome exactamente igual de afortunado.' },
+  { emoji:'🌙', texto:'Eres mi luz en las horas más oscuras, la que no se apaga aunque yo intente no mirarla. Siempre estás ahí, brillando con una calma que me salva.' },
+  { emoji:'💝', texto:'Hay un cariño en ti que no pide nada a cambio, que da porque sí, porque puede. Ese tipo de amor es el más raro y el más valioso que existe.' },
+  { emoji:'🔥', texto:'Lo que siento por ti tiene la fuerza de algo que no se puede contener. Es pasión y calma al mismo tiempo, fuego que no quema sino que ilumina.' },
+  { emoji:'🌅', texto:'Eres mi amanecer favorito, la promesa de que cada día puede empezar con algo hermoso si me permito ver las cosas con los ojos con que te veo a ti.' },
+  { emoji:'👫', texto:'Contigo aprendí que la mejor compañía no es la que llena el silencio, sino la que hace que el silencio se sienta como el lugar más cómodo del universo.' },
+  { emoji:'💞', texto:'Todo lo que eres me parece extraordinario. No solo lo evidente, sino los detalles pequeños que solo se ven cuando alguien te importa de verdad.' },
+  { emoji:'💗', texto:'Eres mi vida entera en el sentido más honesto: lo que le da color, lo que le da peso, lo que hace que tenga sentido seguir construyendo.' },
+  { emoji:'🎨', texto:'Me inspiras a ser mejor versión de mí mismo, a crear, a soñar en grande. Eres el motivo por el que quiero dejar algo bonito en este mundo.' },
+  { emoji:'🌍', texto:'Eres mi mundo en el sentido más literal: todo lo que me importa, todo lo que cuido, todo lo que no quisiera perder, tiene algo de ti adentro.' },
+  { emoji:'🌠', texto:'Eres todo lo que pedí en los deseos que lancé a las estrellas fugaces. Solo que la realidad superó con creces todo lo que fui capaz de imaginar.' },
+  { emoji:'🏡', texto:'Eres mi hogar, pero no el de las paredes y el techo. El hogar que cargo dentro, el que me recuerda que pertenezco a algún lugar cuando todo se mueve.' },
+  { emoji:'💓', texto:'Eres mi razón de sonreír sin motivo específico, de caminar diferente, de sentir que vale la pena cuidar los detalles y estar presente en cada momento.' },
+  { emoji:'🤝', texto:'Quiero estar siempre juntos, no solo en los momentos bonitos sino en los ordinarios, en los difíciles, en todos los que construyen algo real y duradero.' },
+  { emoji:'🕊️', texto:'Eres mi fe en que las cosas buenas existen y llegan. Me enseñaste a confiar en lo inesperado y a no cerrar los ojos cuando algo hermoso aparece.' },
+
+  { emoji:'💖', texto:'Desde que llegaste, los días tienen una luz distinta. No porque todo sea perfecto, sino porque tú haces que incluso lo imperfecto tenga belleza.' },
+
+  { emoji:'🌹', texto:'Eres esa coincidencia tan hermosa que parece planeada por el destino. Una de esas personas que aparecen una vez en la vida y cambian todo para siempre.' },
+
+  { emoji:'☀️', texto:'Hay algo en tu manera de existir que ilumina cada lugar al que llegas. Como si llevaras un pequeño amanecer contigo a donde quiera que vayas.' },
+
+  { emoji:'💫', texto:'Si alguna vez me preguntan qué es la felicidad, hablaré de ti. De tu sonrisa, de tu voz y de la tranquilidad que encuentro cuando estás cerca.' },
+
+  { emoji:'🌻', texto:'Eres como un girasol en medio de mis días grises, siempre encontrando la manera de mirar hacia la luz y enseñándome a hacer lo mismo.' },
+
+  { emoji:'🌙', texto:'Cuando llega la noche y todo se queda en silencio, mis pensamientos siempre encuentran el camino para regresar a ti.' },
+
+  { emoji:'🦋', texto:'Tu presencia transformó mi vida de una forma tan natural que a veces olvido cómo era el mundo antes de conocerte.' },
+
+  { emoji:'⭐', texto:'No necesito mirar al cielo para encontrar mi estrella favorita. Mi estrella tiene tu nombre y camina por la tierra.' },
+
+  { emoji:'🎀', texto:'Hay detalles tuyos que guardo como tesoros: una palabra, una mirada, una sonrisa inesperada. Son pequeños regalos que alegran mis días.' },
+
+  { emoji:'🌈', texto:'Llegaste después de muchas tormentas y me recordaste que siempre existe un arcoíris esperando después de la lluvia.' },
+
+  { emoji:'💌', texto:'Si pudiera escribir todo lo que significas para mí, necesitaría más páginas de las que existen en todas las bibliotecas del mundo.' },
+
+  { emoji:'🌺', texto:'Tienes esa capacidad extraordinaria de convertir los momentos simples en recuerdos que quiero conservar para siempre.' },
+
+  { emoji:'🎇', texto:'Eres el fuego artificial más hermoso que he visto, porque iluminas mi vida sin desaparecer después de unos segundos.' },
+
+  { emoji:'🍀', texto:'A veces pienso que tuve demasiada suerte al encontrarte. Como si hubiera ganado una lotería que ni siquiera sabía que estaba jugando.' },
+
+  { emoji:'🏞️', texto:'Contigo aprendí que los paisajes más hermosos no siempre son lugares; a veces son personas que nos hacen sentir en paz.' },
+
+  { emoji:'💎', texto:'Entre todas las cosas valiosas que existen, tú sigues siendo la más importante. Porque tu valor no se mide, se siente.' },
+
+  { emoji:'🎵', texto:'Tu nombre suena diferente cuando lo pienso. Tiene el ritmo de una canción que nunca me canso de escuchar.' },
+
+  { emoji:'🌠', texto:'Eres el deseo que nunca tuve que pedir porque la vida decidió concedérmelo antes de que supiera cuánto lo necesitaba.' },
+
+  { emoji:'🤍', texto:'Hay personas que dejan huellas y personas que dejan hogares. Tú lograste ambas cosas en mi corazón.' },
+
+  { emoji:'🌊', texto:'Quererte se parece al mar: inmenso, profundo y lleno de cosas hermosas que descubro cada día.' },
+
+  { emoji:'🥹', texto:'A veces me quedo observándote y me cuesta creer que alguien tan especial forme parte de mi vida.' },
+
+  { emoji:'☕', texto:'Eres como ese primer sorbo de café en una mañana difícil: el pequeño detalle que cambia completamente el día.' },
+
+  { emoji:'🫶', texto:'No sé si existen las almas destinadas a encontrarse, pero si existen, estoy seguro de que la mía reconoció a la tuya desde el primer instante.' },
+
+  { emoji:'🌷', texto:'Tu forma de ser tiene una delicadeza que no necesita llamar la atención. Simplemente florece y embellece todo a su alrededor.' },
+
+  { emoji:'💝', texto:'Entre todas las cosas bonitas que me han pasado, conocerte sigue ocupando el primer lugar.' },
+
+  { emoji:'🌼', texto:'Tu felicidad se ha vuelto importante para mí de una forma que nunca imaginé posible.' },
+
+  { emoji:'🕯️', texto:'Incluso en los momentos más oscuros, el recuerdo de ti sigue siendo una pequeña luz que me ayuda a continuar.' },
+
+  { emoji:'🚀', texto:'Desde que apareciste en mi vida, mis sueños se sienten más grandes y mis miedos mucho más pequeños.' },
+
+  { emoji:'🎨', texto:'Si mi vida fuera un cuadro, tú serías el color que le da sentido a todo lo demás.' },
+
+  { emoji:'💗', texto:'Hay una tranquilidad única en saber que existes. Como si el mundo fuera un lugar mejor simplemente porque estás en él.' },
+
+  { emoji:'🌍', texto:'Podría recorrer miles de lugares diferentes y aun así seguir pensando que mi sitio favorito es donde tú estás.' },
+
+  { emoji:'🧸', texto:'Tu ternura tiene algo especial: logra que incluso los días más difíciles se sientan un poco más suaves.' },
+
+  { emoji:'📖', texto:'Eres mi capítulo favorito de una historia que todavía quiero seguir escribiendo durante mucho tiempo.' },
+
+  { emoji:'🎁', texto:'Tu presencia es uno de esos regalos que no vienen envueltos, pero que cambian la vida mucho más que cualquier objeto.' },
+
+  { emoji:'🌿', texto:'Hay paz en tu manera de hablar, de mirar y de estar. Una paz que contagia y que siempre quiero cerca.' },
+
+  { emoji:'✨', texto:'Cada vez que sonríes, siento que el universo encuentra una nueva forma de verse más bonito.' },
+
+  { emoji:'🏡', texto:'No importa dónde esté, porque cada vez que pienso en ti siento la misma sensación de estar llegando a casa.' },
+
+  { emoji:'🎈', texto:'Tienes la capacidad de hacer que los problemas pesen menos y que las alegrías duren mucho más.' },
+
+  { emoji:'💞', texto:'Eres una de las pocas personas que logró entrar en mi corazón sin pedir permiso y quedarse sin esfuerzo.' },
+
+  { emoji:'🌸', texto:'Hay una belleza en tu forma de ser que va mucho más allá de lo que los ojos pueden ver.' },
+
+  { emoji:'🌞', texto:'Cuando pienso en el futuro, siempre imagino un poco de tu luz acompañando mis días.' },
+
+  { emoji:'🦢', texto:'Tu elegancia no está en cómo luces, sino en la forma tan hermosa en que tratas a los demás.' },
+
+  { emoji:'🎆', texto:'Hay personas que brillan por momentos y personas que iluminan vidas. Tú perteneces a la segunda categoría.' },
+
+  { emoji:'💓', texto:'Mi corazón aprendió nuevas formas de sentirse vivo desde el día en que te conoció.' },
+
+  { emoji:'🌺', texto:'Si pudiera conservar una sola cosa para siempre, elegiría la sensación que tengo cuando estoy contigo.' },
+
+  { emoji:'🌙', texto:'Eres el pensamiento bonito que aparece justo antes de dormir y la razón por la que muchas mañanas empiezan mejor.' },
+
+  { emoji:'🤗', texto:'Tus abrazos tienen una forma silenciosa de decir que todo estará bien, incluso cuando las palabras no alcanzan.' },
+
+  { emoji:'🍃', texto:'Llegaste a mi vida con la suavidad de una brisa y terminaste convirtiéndote en algo imprescindible.' },
+
+  { emoji:'💫', texto:'Hay algo mágico en ti que no sé explicar. Solo sé que desde que apareciste, todo parece tener más sentido.' },
+
+  { emoji:'❤️', texto:'Si tuviera que resumir todo lo que siento en una sola frase, diría que mi mundo es mucho más bonito porque tú formas parte de él.' }
+,
+{ emoji:'🌹', texto:'Hay personas que llegan para quedarse en los recuerdos y otras que llegan para quedarse en el corazón. Tú lograste ambas cosas al mismo tiempo.' },
+
+  { emoji:'🌤️', texto:'Desde que apareciste, incluso los días comunes tienen algo especial. Como si tu existencia hubiera añadido un poco más de color al mundo.' },
+
+  { emoji:'💜', texto:'Eres una de esas raras personas que hacen sentir comprendido incluso cuando no se ha dicho una sola palabra.' },
+
+  { emoji:'🦋', texto:'Cada conversación contigo deja algo bonito en mí, como si sembraras pequeñas flores en los lugares donde antes había dudas.' },
+
+  { emoji:'🌊', texto:'Tu cariño tiene la calma de las olas cuando llegan a la orilla: constante, sincero y capaz de tranquilizar cualquier tormenta.' },
+
+  { emoji:'🎇', texto:'Conocerte fue como descubrir un cielo lleno de estrellas cuando creía que ya había visto todo lo que podía sorprenderme.' },
+
+  { emoji:'🍂', texto:'Incluso en mis temporadas más difíciles, tu presencia ha sido ese refugio cálido que me recuerda que todo puede mejorar.' },
+
+  { emoji:'🏹', texto:'Sin proponértelo, encontraste el camino exacto hacia las partes más profundas de mi corazón.' },
+
+  { emoji:'🌟', texto:'No hay distancia ni tiempo capaz de disminuir el brillo que tienes en mis pensamientos.' },
+
+  { emoji:'☀️', texto:'Hay una energía hermosa en ti que logra transformar los momentos simples en experiencias inolvidables.' },
+
+  { emoji:'🕊️', texto:'Tu forma de existir transmite una tranquilidad tan especial que basta recordarte para sentirme mejor.' },
+
+  { emoji:'🌸', texto:'Algunas flores necesitan cuidados para florecer; tú simplemente apareces y haces florecer todo a tu alrededor.' },
+
+  { emoji:'🎼', texto:'Si mi vida tuviera banda sonora, muchas de sus mejores melodías llevarían tu nombre escondido entre las notas.' },
+
+  { emoji:'💫', texto:'Tienes la capacidad de hacer que las cosas importantes parezcan sencillas y que las cosas sencillas parezcan extraordinarias.' },
+
+  { emoji:'🏔️', texto:'Eres como una montaña hermosa: imponente, admirable y capaz de regalar las vistas más increíbles a quien se acerca.' },
+
+  { emoji:'🌈', texto:'Tu sonrisa tiene algo parecido a los arcoíris: aparece y de inmediato todo parece más brillante.' },
+
+  { emoji:'🧡', texto:'Hay una calidez en tu forma de ser que hace sentir bienvenido incluso a quien llega con el corazón cansado.' },
+
+  { emoji:'🌿', texto:'Cada momento compartido contigo se siente como una pausa agradable en medio de la velocidad del mundo.' },
+
+  { emoji:'🎀', texto:'No sé cómo lo haces, pero siempre encuentras la manera de volver especial incluso el día más ordinario.' },
+
+  { emoji:'💌', texto:'Si pudiera enviarte una carta escrita con sentimientos en lugar de tinta, cada página estaría llena de gratitud por haberte encontrado.' },
+
+  { emoji:'🌠', texto:'Hay personas que parecen cumplir deseos sin saberlo. Tú eres una de ellas.' },
+
+  { emoji:'🏡', texto:'Tu compañía tiene esa rara capacidad de convertir cualquier lugar en un espacio donde me siento cómodo y seguro.' },
+
+  { emoji:'💎', texto:'Lo más valioso de ti no es algo que pueda verse, sino la forma en que haces sentir a quienes tienen la suerte de conocerte.' },
+
+  { emoji:'🌺', texto:'Eres una de esas bellezas que no se desgastan con el tiempo; al contrario, se vuelven más admirables cada día.' },
+
+  { emoji:'🫧', texto:'Hablar contigo es como abrir una ventana y dejar entrar aire fresco después de mucho tiempo.' },
+
+  { emoji:'🚲', texto:'A tu lado, los caminos parecen más ligeros y los destinos mucho más emocionantes.' },
+
+  { emoji:'⭐', texto:'No importa cuántas personas conozca, siempre habrá algo en ti que te haga imposible de reemplazar.' },
+
+  { emoji:'🎁', texto:'Tu amistad, tu cariño o simplemente tu presencia ya son regalos que valen más de lo que imaginas.' },
+
+  { emoji:'🌻', texto:'Tienes una forma hermosa de mirar la vida que inspira a los demás a encontrar motivos para sonreír.' },
+
+  { emoji:'💖', texto:'Cada vez que pienso en ti descubro una nueva razón para agradecer que existas.' },
+
+  { emoji:'🌙', texto:'En medio del ruido de los días, recordarte sigue siendo una de mis formas favoritas de encontrar calma.' },
+
+  { emoji:'🍃', texto:'Hay personas que pasan por nuestra vida y dejan recuerdos; tú dejas huellas imposibles de borrar.' },
+
+  { emoji:'🎨', texto:'Tu esencia tiene tantos matices bonitos que nunca termino de admirarlos todos.' },
+
+  { emoji:'🌞', texto:'Tu optimismo ilumina más que muchas certezas y tu sonrisa más que muchos amaneceres.' },
+
+  { emoji:'💓', texto:'Eres una de esas razones silenciosas que hacen que la vida se sienta más bonita sin necesidad de explicarlo.' },
+
+  { emoji:'🦢', texto:'Hay una elegancia natural en tu forma de tratar a las personas que siempre termina destacando.' },
+
+  { emoji:'🌷', texto:'Cada detalle tuyo parece demostrar que la belleza más auténtica siempre nace de la sencillez.' },
+
+  { emoji:'🎆', texto:'Tu presencia deja una impresión tan bonita que incluso después de irte sigue iluminando el recuerdo.' },
+
+  { emoji:'🤍', texto:'A veces basta pensar en ti unos segundos para que el día cambie completamente de dirección.' },
+
+  { emoji:'🌍', texto:'Si el mundo tiene millones de personas, sigo pensando que encontrarte fue una de las mejores coincidencias posibles.' },
+
+  { emoji:'🎈', texto:'Contigo las preocupaciones pierden peso y las alegrías encuentran nuevas razones para quedarse.' },
+
+  { emoji:'🌊', texto:'Tu forma de escuchar tiene algo especial: hace sentir importantes incluso las palabras más pequeñas.' },
+
+  { emoji:'🏞️', texto:'Hay paisajes hermosos que se admiran con los ojos, pero personas como tú se admiran con el alma.' },
+
+  { emoji:'💝', texto:'Tu bondad es de esas cosas que no necesitan anunciarse porque se nota en cada acción.' },
+
+  { emoji:'🌺', texto:'Con el paso del tiempo sigo descubriendo nuevas razones para admirarte y ninguna decepciona.' },
+
+  { emoji:'🕯️', texto:'Eres una luz discreta pero constante, de esas que nunca buscan destacar y aun así iluminan todo.' },
+
+  { emoji:'🚀', texto:'Tienes el talento de motivar a otros simplemente siendo tú, sin intentarlo y sin darte cuenta.' },
+
+  { emoji:'🍀', texto:'Conocerte fue una de esas suertes que llegan una sola vez y que vale la pena cuidar siempre.' },
+
+  { emoji:'🎵', texto:'Hay voces que se escuchan y voces que se recuerdan. La tuya pertenece al segundo grupo.' },
+
+  { emoji:'❤️', texto:'Entre todas las historias bonitas que conozco, siempre habrá una parte especial reservada para la que comenzó el día que apareciste en mi vida.' }
+  ,
+  { emoji:'🎠', texto:'Si mi vida fuera un parque de diversiones, tú serías esa atracción a la que siempre quiero volver. No importa cuántas veces la visite, nunca pierde la emoción ni la capacidad de sorprenderme.' },
+
+{ emoji:'🧩', texto:'Antes de conocerte había piezas de mí que no entendía. No viniste a completarme, pero sí me ayudaste a descubrir partes de mí que permanecían escondidas.' },
+
+{ emoji:'🪁', texto:'Tienes la extraña habilidad de hacer que los pensamientos pesados pierdan fuerza, como una cometa que vuelve a elevarse después de haber caído al suelo.' },
+
+{ emoji:'🎭', texto:'Contigo no necesito interpretar ningún papel. Puedo mostrar mis alegrías, mis dudas y mis errores sin miedo a dejar de ser querido.' },
+
+{ emoji:'🫐', texto:'Hay algo refrescante en tu forma de ver la vida. Como el sabor inesperado de algo nuevo que termina convirtiéndose en uno de tus favoritos.' },
+
+{ emoji:'🧭', texto:'Cuando todo parece confuso, pensar en tus palabras me ayuda a ordenar las ideas y encontrar nuevamente el rumbo que quiero seguir.' },
+
+{ emoji:'🏹', texto:'No llegaste haciendo ruido ni buscando atención. Simplemente apareciste y terminaste ocupando un lugar importante sin necesidad de forzarlo.' },
+
+{ emoji:'🎪', texto:'Tienes una manera única de convertir los días rutinarios en algo digno de ser recordado, como si escondieras pequeños espectáculos dentro de los momentos comunes.' },
+
+{ emoji:'🥨', texto:'Las mejores cosas suelen ser simples, y tú me recuerdas eso constantemente con tu autenticidad y tu forma sincera de estar presente.' },
+
+{ emoji:'🪄', texto:'Hay personas que ofrecen consejos y otras que inspiran con el ejemplo. Tú perteneces a ese segundo grupo que transforma sin imponer.' },
+
+{ emoji:'🎯', texto:'Entre tantas casualidades y encuentros pasajeros, tú terminaste siendo una certeza hermosa que nunca vi venir.' },
+
+{ emoji:'🫖', texto:'Tu compañía se parece a esas conversaciones largas que nadie quiere terminar porque siempre dejan algo valioso para pensar.' },
+
+{ emoji:'🎲', texto:'Si la vida fuera un juego de azar, encontrarte habría sido la jugada más afortunada de todas.' },
+
+{ emoji:'🧵', texto:'Hay detalles pequeños que nos unen sin que lo notemos. Con el tiempo descubrí que muchos de los míos llevan tu nombre escondido.' },
+
+{ emoji:'🎻', texto:'Tu presencia tiene la delicadeza de una melodía suave: no necesita volumen para quedarse grabada en la memoria.' },
+
+{ emoji:'🍯', texto:'Tienes una forma especial de suavizar los momentos difíciles, no porque los hagas desaparecer, sino porque los vuelves más fáciles de atravesar.' },
+
+{ emoji:'🪙', texto:'Hay personas valiosas por lo que poseen y otras por lo que provocan en los demás. Tú perteneces a las que enriquecen cualquier vida que tocan.' },
+
+{ emoji:'🎡', texto:'Incluso después de muchos momentos compartidos, sigues encontrando maneras nuevas de sorprenderme y mantener viva la admiración que siento por ti.' },
+
+{ emoji:'📚', texto:'Si cada recuerdo contigo fuera una página, ya tendría una biblioteca entera dedicada a las cosas bonitas que me has regalado.' },
+
+{ emoji:'🥐', texto:'Hay algo reconfortante en saber que existes. Como encontrar algo cálido y agradable justo cuando más lo necesitabas.' },
+
+{ emoji:'🪴', texto:'Las personas especiales no siempre cambian el mundo entero; a veces cambian un solo corazón, y eso ya es suficiente para transformar una vida.' },
+
+{ emoji:'🎫', texto:'Conocerte fue como recibir una invitación inesperada a una experiencia que terminó siendo mucho mejor de lo que imaginaba.' },
+
+{ emoji:'🛶', texto:'Hay quienes avanzan solos por la corriente y quienes hacen el viaje más llevadero. Tú eres de esas personas que mejoran el recorrido.' },
+
+{ emoji:'🍇', texto:'Tu forma de ser tiene una riqueza de matices que se descubre poco a poco, y cada descubrimiento resulta más agradable que el anterior.' },
+
+{ emoji:'🧺', texto:'Si pudiera guardar algunas cosas para siempre, elegiría ciertos momentos contigo, porque contienen una felicidad difícil de explicar.' },
+
+{ emoji:'🏵️', texto:'La admiración que siento por ti no nació de un instante. Creció lentamente hasta convertirse en algo imposible de ignorar.' },
+
+{ emoji:'🪄', texto:'A veces basta una sola palabra tuya para mejorar un día entero. Ese tipo de influencia no es común y tampoco pasa desapercibida.' },
+
+{ emoji:'🎐', texto:'Tienes una serenidad especial que no intenta imponerse. Simplemente está ahí, haciendo que todo se sienta un poco más ligero.' },
+
+{ emoji:'🥝', texto:'Conocerte me enseñó que todavía existen personas capaces de sorprender por su bondad, incluso cuando uno cree haberlo visto todo.' },
+
+{ emoji:'📦', texto:'Algunos regalos llegan envueltos en papel; otros llegan en forma de personas que terminan significando más de lo que imaginabas.' },
+
+{ emoji:'🧱', texto:'Sin darte cuenta, te convertiste en uno de esos pilares silenciosos que ayudan a sostener los días importantes.' },
+
+{ emoji:'🎣', texto:'Hay conversaciones que pasan rápido y otras que se quedan flotando en la mente durante días. Las tuyas suelen pertenecer al segundo tipo.' },
+
+{ emoji:'🍓', texto:'Tu espontaneidad tiene algo encantador. Hace que los momentos más simples terminen siendo los más memorables.' },
+
+{ emoji:'🛤️', texto:'Mirando hacia atrás, me doy cuenta de que muchos de mis mejores recuerdos aparecieron después de cruzarme contigo.' },
+
+{ emoji:'🎑', texto:'Hay personas que llaman la atención por un momento y otras que dejan una impresión duradera. Tú tienes ese raro talento de permanecer.' },
+
+{ emoji:'🪸', texto:'Cuanto más te conozco, más descubro aspectos tuyos que valen la pena admirar. Siempre parece haber algo nuevo por apreciar.' },
+
+{ emoji:'🧃', texto:'Tu energía tiene algo refrescante, como esas pequeñas pausas que hacen que un día largo se vuelva mucho más agradable.' },
+
+{ emoji:'🎠', texto:'No importa cuántas vueltas dé la vida, siempre encuentro razones para valorar el hecho de haberte conocido.' },
+
+{ emoji:'🫚', texto:'Hay fortalezas que se notan de inmediato y otras que se descubren con el tiempo. Las tuyas pertenecen a esas que generan respeto profundo.' },
+
+{ emoji:'🎎', texto:'Cada persona tiene algo que la hace única, pero hay muy pocas cuya autenticidad se siente tan natural como la tuya.' },
+
+{ emoji:'🥮', texto:'Tu presencia deja una sensación agradable que permanece incluso después de que el momento termina.' },
+
+{ emoji:'🪭', texto:'Hay una elegancia especial en quienes son amables sin buscar reconocimiento. Tú tienes exactamente esa clase de belleza.' },
+
+{ emoji:'🎒', texto:'Si pudiera llevar algo conmigo a cualquier lugar, elegiría ciertos recuerdos contigo porque siempre consiguen hacerme sonreír.' },
+
+{ emoji:'🪺', texto:'A tu lado aprendí que la confianza no siempre se construye con grandes gestos; muchas veces nace de los detalles constantes.' },
+
+{ emoji:'🍊', texto:'Tienes la capacidad de aportar frescura a cualquier conversación, incluso cuando el tema parece agotado o aburrido.' },
+
+{ emoji:'🎗️', texto:'Existen personas importantes por lo que hacen y personas importantes simplemente por quienes son. Tú reúnes ambas cualidades.' },
+
+{ emoji:'🪨', texto:'En un mundo donde muchas cosas cambian rápidamente, tu autenticidad sigue siendo una de las cosas que más admiro.' },
+
+{ emoji:'🎍', texto:'Tu crecimiento, tu forma de enfrentar desafíos y tu manera de seguir adelante son cualidades que inspiran más de lo que imaginas.' },
+
+{ emoji:'🛎️', texto:'Hay encuentros que parecen accidentales, pero terminan marcando etapas completas de la vida. Conocerte fue uno de ellos.' },
+
+{ emoji:'🪁', texto:'Si alguna vez alguien me preguntara qué significa dejar una huella positiva, probablemente terminaría describiendo muchas de las cosas que te hacen especial.' }
+,
+{ emoji:'🪷', texto:'Hay personas que destacan por lo que hacen, pero tú destacas por la paz que transmites. Tu sola presencia tiene la capacidad de volver más amable cualquier instante.' },
+
+{ emoji:'🐚', texto:'A veces encuentro en mis recuerdos pequeños detalles tuyos que siguen brillando con la misma intensidad que el día en que ocurrieron.' },
+
+{ emoji:'🦚', texto:'Tu esencia tiene algo extraordinario: no necesita llamar la atención para ser imposible de ignorar.' },
+
+{ emoji:'🪼', texto:'Hay una suavidad en tu forma de tratar a los demás que deja una impresión duradera, incluso en quienes apenas te conocen.' },
+
+{ emoji:'🦩', texto:'Tu autenticidad es una de las cosas que más admiro. Nunca intentas ser alguien más, y eso te vuelve aún más especial.' },
+
+{ emoji:'🦜', texto:'Hablar contigo siempre deja algo valioso. Ya sea una sonrisa, una reflexión o simplemente una sensación agradable que acompaña el resto del día.' },
+
+{ emoji:'🪹', texto:'Algunas personas construyen lugares físicos; tú construyes espacios emocionales donde los demás se sienten comprendidos y valorados.' },
+
+{ emoji:'🧿', texto:'Desde que llegaste, muchas preocupaciones dejaron de parecer tan grandes. Como si tu forma de ver la vida ayudara a poner todo en perspectiva.' },
+
+{ emoji:'🧶', texto:'Los momentos compartidos contigo se entrelazan en mi memoria formando algunos de los recuerdos más valiosos que tengo.' },
+
+{ emoji:'🪢', texto:'Hay vínculos que nacen lentamente y terminan siendo irrompibles. El cariño que te tengo pertenece a esa categoría.' },
+
+{ emoji:'🪵', texto:'Tu fortaleza no está en aparentar perfección, sino en seguir adelante con valentía incluso en los días complicados.' },
+
+{ emoji:'🥥', texto:'Cuanto más tiempo pasa, más razones encuentro para agradecer haberte conocido y haber coincidido contigo en este camino.' },
+
+{ emoji:'🍒', texto:'Tienes una manera especial de alegrar los ambientes sin esfuerzo, simplemente siendo tú y compartiendo tu energía.' },
+
+{ emoji:'🥭', texto:'Si las buenas personas dejaran una marca visible, estoy seguro de que tu huella podría verse desde muy lejos.' },
+
+{ emoji:'🍍', texto:'Lo mejor de algunas personas es lo que provocan en los demás. Lo mejor de ti es que inspiras tranquilidad, confianza y alegría al mismo tiempo.' },
+
+{ emoji:'🥑', texto:'Hay algo admirable en tu forma de afrontar la vida. Incluso los desafíos parecen más manejables cuando observas las cosas con esa actitud.' },
+
+{ emoji:'🌽', texto:'Tu manera de escuchar hace sentir importante incluso aquello que uno considera insignificante.' },
+
+{ emoji:'🥕', texto:'No todas las personas tienen el don de hacer sentir cómodos a quienes las rodean. Tú pareces hacerlo de manera natural.' },
+
+{ emoji:'🍉', texto:'Existen recuerdos que el tiempo desgasta y otros que permanecen intactos. Muchos de los que te incluyen pertenecen al segundo grupo.' },
+
+{ emoji:'🍑', texto:'La admiración verdadera crece con el tiempo. Y cuanto más te conozco, más motivos encuentro para admirarte.' },
+
+{ emoji:'🥨', texto:'Hay conversaciones que terminan cuando se agotan las palabras y otras que dejan ganas de seguir hablando durante horas. Las tuyas siempre son así.' },
+
+{ emoji:'🍪', texto:'Tienes la capacidad de convertir momentos simples en experiencias que terminan ocupando un lugar especial en la memoria.' },
+
+{ emoji:'🧁', texto:'Tu bondad aparece en pequeños gestos cotidianos que quizá pasan desapercibidos para ti, pero no para quienes te aprecian.' },
+
+{ emoji:'🍰', texto:'Algunas personas enseñan con discursos; tú enseñas con tu ejemplo y con la forma en que enfrentas cada día.' },
+
+{ emoji:'🍫', texto:'Tu compañía tiene un efecto curioso: los minutos parecen pasar más rápido y los buenos recuerdos aparecen con más facilidad.' },
+
+{ emoji:'🥮', texto:'Hay una armonía en tu manera de ser que resulta difícil de describir, pero muy fácil de apreciar.' },
+
+{ emoji:'🍯', texto:'Cada vez que pienso en las personas que han dejado algo positivo en mi vida, tu nombre aparece entre los primeros.' },
+
+{ emoji:'🫒', texto:'Tu forma de cuidar a quienes te importan demuestra una sensibilidad que no se encuentra todos los días.' },
+
+{ emoji:'🍵', texto:'Hablar contigo tiene la misma sensación que encontrar un momento de calma en medio de una semana agitada.' },
+
+{ emoji:'🧋', texto:'No importa cuánto tiempo pase; siempre encuentro algo nuevo en ti que me sorprende de manera positiva.' },
+
+{ emoji:'🏺', texto:'Hay personas que parecen estar hechas de experiencias valiosas. Tú eres una de ellas, porque siempre dejas algo bueno en quienes te conocen.' },
+
+{ emoji:'🪔', texto:'Tu luz no busca destacar por encima de nadie. Simplemente ilumina y mejora todo lo que toca.' },
+
+{ emoji:'⚱️', texto:'La verdadera belleza está en la esencia de las personas, y la tuya se refleja en cada acción sincera que realizas.' },
+
+{ emoji:'🪙', texto:'Si pudiera enumerar todas las cualidades que admiro de ti, necesitaría mucho más tiempo del que existe en una sola conversación.' },
+
+{ emoji:'⚜️', texto:'Hay algo noble en tu forma de actuar, una mezcla de respeto, empatía y autenticidad que siempre deja una buena impresión.' },
+
+{ emoji:'🎖️', texto:'Si existiera un reconocimiento para quienes hacen la vida más agradable a los demás, sin duda merecerías uno.' },
+
+{ emoji:'🏮', texto:'Incluso en los momentos más comunes, logras aportar algo que vuelve la experiencia más agradable y memorable.' },
+
+{ emoji:'🪞', texto:'Tu capacidad para comprender emociones ajenas demuestra una sensibilidad que vale muchísimo más de lo que imaginas.' },
+
+{ emoji:'📯', texto:'Hay personas que anuncian su valor constantemente; tú no necesitas hacerlo porque se nota por sí solo.' },
+
+{ emoji:'🎺', texto:'La sinceridad con la que expresas lo que piensas es una de las razones por las que resulta tan fácil confiar en ti.' },
+
+{ emoji:'🎷', texto:'Tu personalidad tiene matices tan interesantes que cada conversación contigo parece revelar algo nuevo y admirable.' },
+
+{ emoji:'🪘', texto:'La energía positiva que transmites permanece incluso después de que termina el encuentro.' },
+
+{ emoji:'🎸', texto:'Algunas personas dejan recuerdos; tú dejas aprendizajes, inspiración y motivos para sonreír.' },
+
+{ emoji:'🎹', texto:'Hay una belleza especial en quienes conservan su esencia sin importar las circunstancias. Tú eres una de esas personas.' },
+
+{ emoji:'🎤', texto:'Tus palabras tienen el poder de quedarse resonando en la mente mucho después de haber sido pronunciadas.' },
+
+{ emoji:'📻', texto:'Incluso cuando no estás presente, ciertos recuerdos tuyos siguen apareciendo para mejorar el día.' },
+
+{ emoji:'🧳', texto:'Si la vida es un viaje, me alegra enormemente que nuestros caminos hayan coincidido en algún punto del recorrido.' },
+
+{ emoji:'🛖', texto:'La confianza que inspiras nace de algo muy simple y muy valioso: siempre te muestras tal como eres.' },
+
+{ emoji:'🏕️', texto:'Compartir tiempo contigo se parece a encontrar un lugar agradable donde descansar después de una larga caminata.' },
+
+{ emoji:'🌋', texto:'Detrás de tu tranquilidad existe una fuerza admirable que aparece cada vez que la vida te pone a prueba.' },
+{ emoji:'💖', texto:'Hay personas que llegan para formar parte de una etapa y otras que terminan formando parte de quién eres. Tú te convertiste en una de esas presencias que dejan huellas profundas y hermosas.' },
+
+{ emoji:'🌷', texto:'No importa cuántas cosas ocurran durante el día; siempre encuentro un momento para pensar en ti y agradecer la suerte de haberte conocido.' },
+
+{ emoji:'✨', texto:'Tu forma de ver el mundo me recuerda que todavía existen razones para creer en la bondad, en la sinceridad y en las conexiones verdaderas.' },
+
+{ emoji:'🌙', texto:'A veces imagino cómo habría sido mi vida si nuestros caminos nunca se hubieran cruzado, y siempre llego a la misma conclusión: habría sido mucho menos especial.' },
+
+{ emoji:'💫', texto:'Tienes la capacidad de dejar una impresión bonita incluso en los momentos más simples. Eso es algo que muy pocas personas consiguen.' },
+
+{ emoji:'🦋', texto:'Hay una tranquilidad que aparece cuando hablo contigo, una sensación difícil de explicar pero imposible de ignorar.' },
+
+{ emoji:'🌸', texto:'Cada vez que descubro algo nuevo sobre ti, encuentro una razón más para admirar la persona que eres.' },
+
+{ emoji:'💝', texto:'Las cosas más valiosas no siempre pueden tocarse o verse. A veces toman la forma de una persona que mejora la vida de quienes la rodean.' },
+
+{ emoji:'🌺', texto:'Si los buenos recuerdos pudieran florecer, estoy seguro de que muchos de los míos tendrían tu nombre escrito entre sus pétalos.' },
+
+{ emoji:'☀️', texto:'Tu optimismo tiene algo contagioso. Hace que incluso los días complicados parezcan un poco más fáciles de enfrentar.' },
+
+{ emoji:'🌊', texto:'Hay conversaciones contigo que permanecen en mi mente durante días porque siempre dejan algo importante para reflexionar.' },
+
+{ emoji:'🎨', texto:'Tu personalidad está llena de matices interesantes, como una obra que revela nuevos detalles cada vez que se observa con atención.' },
+
+{ emoji:'💗', texto:'Lo que más admiro de ti no es una sola cualidad, sino la manera en que muchas cosas bonitas conviven naturalmente en ti.' },
+
+{ emoji:'🌻', texto:'Tienes el don de encontrar luz donde otros solo ven dificultades, y eso inspira más de lo que imaginas.' },
+
+{ emoji:'⭐', texto:'Hay personas que destacan por llamar la atención y otras por ganarse el cariño de quienes las conocen. Tú perteneces al segundo grupo.' },
+
+{ emoji:'🏡', texto:'Algunas personas hacen sentir comodidad con palabras; tú lo consigues simplemente siendo tú.' },
+
+{ emoji:'💞', texto:'Conocerte fue descubrir que todavía existen personas capaces de sorprender por su calidad humana.' },
+
+{ emoji:'🍀', texto:'Si la vida está hecha de coincidencias, entonces encontrarte fue una de las más afortunadas que me ha tocado vivir.' },
+
+{ emoji:'📖', texto:'Cada experiencia compartida contigo se convierte en una página valiosa dentro de los recuerdos que más aprecio.' },
+
+{ emoji:'🕊️', texto:'Tu forma de actuar transmite una paz que pocas personas poseen y que muchas personas necesitan.' },
+
+{ emoji:'🎵', texto:'Hay nombres que se olvidan fácilmente y otros que terminan asociados a momentos importantes. El tuyo pertenece a esos que permanecen.' },
+
+{ emoji:'🌍', texto:'Entre millones de personas, sigues siendo alguien que destaca por razones que van mucho más allá de lo evidente.' },
+
+{ emoji:'💓', texto:'La admiración más sincera nace cuando conoces realmente a alguien. Por eso la que siento por ti no deja de crecer.' },
+
+{ emoji:'🌈', texto:'Tienes una forma especial de aportar color a la vida de quienes te rodean sin siquiera proponértelo.' },
+
+{ emoji:'🎁', texto:'Algunas personas reciben regalos; otras son el regalo. Tú perteneces a esas que enriquecen cualquier lugar donde están.' },
+
+{ emoji:'🌿', texto:'Hay una naturalidad en tu manera de ser que hace sentir que todo fluye con mayor facilidad.' },
+
+{ emoji:'🤗', texto:'Tu cercanía tiene algo reconfortante, como esos momentos que uno quisiera conservar exactamente como son.' },
+
+{ emoji:'🧸', texto:'Incluso cuando no intentas ayudar, terminas haciéndolo con tu forma amable de escuchar y comprender.' },
+
+{ emoji:'💌', texto:'Si pudiera resumir en una sola palabra lo que aportas a quienes te conocen, probablemente elegiría la palabra inspiración.' },
+
+{ emoji:'🌅', texto:'Hay personas que hacen más bonito el comienzo de un día y otras que mejoran etapas completas de la vida. Tú haces ambas cosas.' },
+
+{ emoji:'😊', texto:'Tu sonrisa tiene una capacidad extraordinaria para cambiar el ambiente de cualquier lugar donde aparece.' },
+
+{ emoji:'🌠', texto:'Hay encuentros que parecen pequeños en el momento, pero con el tiempo se convierten en acontecimientos importantes. Conocerte fue uno de ellos.' },
+
+{ emoji:'💎', texto:'La verdadera rareza no está en ser diferente, sino en ser auténtico. Y esa es una de las cualidades que más admiro de ti.' },
+
+{ emoji:'🎈', texto:'Contigo aprendí que la alegría muchas veces se encuentra en los detalles más simples y cotidianos.' },
+
+{ emoji:'🌼', texto:'Tienes una sensibilidad especial para entender emociones que otras personas pasan por alto.' },
+
+{ emoji:'❤️', texto:'No todas las personas dejan una marca positiva en quienes conocen. Tú pareces hacerlo de manera completamente natural.' },
+
+{ emoji:'🍃', texto:'Hay algo refrescante en tu forma de pensar que siempre consigue aportar nuevas perspectivas.' },
+
+{ emoji:'🌹', texto:'La admiración que siento por ti nació de pequeñas cosas que fueron creciendo hasta convertirse en algo imposible de ignorar.' },
+
+{ emoji:'💜', texto:'Tu presencia demuestra que no hace falta ser perfecto para ser profundamente valioso para los demás.' },
+
+{ emoji:'☁️', texto:'Cuando pienso en las personas que han aportado cosas buenas a mi vida, tu nombre aparece inevitablemente entre ellas.' },
+
+{ emoji:'🎉', texto:'Hay una energía positiva en ti que consigue que incluso los momentos más sencillos se sientan especiales.' },
+
+{ emoji:'🫶', texto:'Algunas personas son recordadas por lo que hicieron; otras por cómo hicieron sentir a los demás. Tú destacas en ambas cosas.' },
+
+{ emoji:'🌺', texto:'Lo mejor de conocerte es descubrir que las cualidades que más admiro de ti siguen apareciendo con el paso del tiempo.' },
+
+{ emoji:'🔥', texto:'Tu determinación frente a los desafíos demuestra una fuerza que inspira respeto y admiración.' },
+
+{ emoji:'🌙', texto:'Hay recuerdos que se desvanecen y otros que permanecen intactos. Muchos de los que te incluyen pertenecen al segundo grupo.' },
+
+{ emoji:'💖', texto:'La confianza que inspiras nace de algo muy simple: siempre muestras una versión genuina de quien eres.' },
+
+{ emoji:'🌸', texto:'Cada momento compartido contigo deja una sensación agradable que permanece mucho después de que termina.' },
+
+{ emoji:'⭐', texto:'No importa cuánto tiempo pase, algunas personas conservan un lugar especial en nuestros pensamientos. Tú eres una de ellas.' },
+
+{ emoji:'💫', texto:'Si tuviera que elegir una palabra para describir el impacto que has tenido en mi vida, elegiría gratitud.' },
+
+{ emoji:'🌷', texto:'Entre todas las cosas bonitas que podrían ocurrir en un día, coincidir contigo siempre estaría entre mis favoritas.' },
+{ emoji:'💖', texto:'Hay personas que dejan buenos recuerdos y otras que cambian la forma en que uno recuerda las cosas. Desde que llegaste, incluso los momentos simples tienen un brillo diferente.' },
+
+{ emoji:'🌷', texto:'Tu manera de valorar los pequeños detalles me enseñó que muchas veces la felicidad vive en lugares donde casi nadie se detiene a mirar.' },
+
+{ emoji:'✨', texto:'Lo que más me gusta de ti no es una sola cualidad, sino la forma en que todas ellas se combinan para crear a alguien verdaderamente especial.' },
+
+{ emoji:'🌊', texto:'Hay algo admirable en tu capacidad para seguir avanzando incluso cuando el camino no es sencillo. Esa fortaleza silenciosa inspira más de lo que imaginas.' },
+
+{ emoji:'🌸', texto:'Conocerte fue descubrir que todavía existen personas capaces de ser sinceras sin perder la dulzura y fuertes sin perder la sensibilidad.' },
+
+{ emoji:'💫', texto:'Cada vez que compartimos una conversación, termino llevándome algo valioso: una idea, una sonrisa o una nueva razón para admirarte.' },
+
+{ emoji:'🦋', texto:'Tienes la capacidad de hacer sentir importantes a las personas simplemente prestándoles atención de verdad.' },
+
+{ emoji:'🌹', texto:'La admiración más bonita es aquella que crece con el tiempo. Por eso cada día encuentro algo nuevo que apreciar en ti.' },
+
+{ emoji:'☀️', texto:'Hay personas que iluminan por un momento y otras que dejan claridad incluso después de haberse ido. Tú perteneces a las segundas.' },
+
+{ emoji:'🎨', texto:'Tu forma de pensar aporta colores nuevos a las situaciones, ayudando a encontrar posibilidades donde otros solo ven límites.' },
+
+{ emoji:'💌', texto:'Si la gratitud pudiera escribirse en cartas infinitas, necesitaría muchas para expresar todo lo bueno que ha significado conocerte.' },
+
+{ emoji:'🌿', texto:'Tu tranquilidad no elimina los problemas, pero hace que parezcan mucho más fáciles de enfrentar.' },
+
+{ emoji:'⭐', texto:'Hay personas cuya importancia no depende de la frecuencia con que las vemos, sino de la huella que dejan. Tú eres una de ellas.' },
+
+{ emoji:'💞', texto:'Lo más bonito de algunas conexiones es que no necesitan explicaciones complejas para sentirse reales y valiosas.' },
+
+{ emoji:'🎈', texto:'Tu entusiasmo por ciertas cosas recuerda que nunca es tarde para emocionarse, aprender o volver a intentarlo.' },
+
+{ emoji:'🌼', texto:'La forma en que tratas a los demás habla muy bien de quién eres cuando nadie está observando.' },
+
+{ emoji:'🕊️', texto:'Existen personas que generan confianza desde el primer instante. Tú tienes ese talento raro y valioso.' },
+
+{ emoji:'💝', texto:'Hay regalos que llegan una sola vez en la vida y cambian la forma en que vemos todo lo demás. Algunas personas son exactamente así.' },
+
+{ emoji:'🍀', texto:'Tu presencia demuestra que la suerte no siempre se encuentra en lo que obtenemos, sino también en las personas que conocemos.' },
+
+{ emoji:'📖', texto:'Si pudiera releer ciertos capítulos de mi vida, muchos de ellos incluirían momentos compartidos contigo.' },
+
+{ emoji:'❤️', texto:'Hay una belleza especial en quienes permanecen fieles a sí mismos incluso cuando sería más fácil fingir ser otra persona.' },
+
+{ emoji:'🌙', texto:'Algunas personas destacan por sus logros; tú destacas por el impacto positivo que tienes en quienes te rodean.' },
+
+{ emoji:'🎵', texto:'Tus palabras tienen una forma especial de quedarse en la memoria porque siempre llevan algo sincero detrás.' },
+
+{ emoji:'🌅', texto:'Cada nuevo día ofrece muchas posibilidades, pero pocas tan agradables como coincidir contigo de alguna manera.' },
+
+{ emoji:'🤗', texto:'Hay una calidez en tu forma de ser que hace sentir bienvenido incluso a quien acaba de llegar.' },
+
+{ emoji:'🌺', texto:'Las mejores cualidades suelen ser discretas, y muchas de las tuyas brillan precisamente por su sencillez.' },
+
+{ emoji:'💓', texto:'La confianza es algo que se construye con tiempo, y tú logras inspirarla casi sin darte cuenta.' },
+
+{ emoji:'🌈', texto:'Tu forma de enfrentar las dificultades demuestra que siempre existe una manera de seguir adelante sin perder la esperanza.' },
+
+{ emoji:'🎁', texto:'A veces la vida sorprende no con cosas, sino con personas que terminan siendo mucho más valiosas que cualquier objeto.' },
+
+{ emoji:'☁️', texto:'Pensar en ciertos momentos compartidos contigo tiene el efecto de volver más ligeras las preocupaciones del día.' },
+
+{ emoji:'💜', texto:'Lo que te hace especial no es intentar destacar, sino la naturalidad con la que dejas una impresión positiva.' },
+
+{ emoji:'🌍', texto:'En un mundo lleno de personas diferentes, logras ser inolvidable por razones que van mucho más allá de lo superficial.' },
+
+{ emoji:'😊', texto:'Tu alegría genuina tiene una forma curiosa de contagiarse a quienes tienen la suerte de compartir tiempo contigo.' },
+
+{ emoji:'🌻', texto:'Hay personas que ayudan con soluciones y otras que ayudan simplemente estando presentes. Ambas cosas tienen valor, y tú las reúnes.' },
+
+{ emoji:'💎', texto:'La autenticidad es una de las cualidades más difíciles de encontrar y una de las que mejor te describen.' },
+
+{ emoji:'🎉', texto:'Contigo incluso las anécdotas más simples terminan convirtiéndose en historias dignas de recordar.' },
+
+{ emoji:'🫶', texto:'Tu capacidad para comprender diferentes puntos de vista demuestra una madurez que siempre resulta admirable.' },
+
+{ emoji:'🌸', texto:'Algunas personas embellecen los lugares que visitan; tú embelleces los momentos que compartes.' },
+
+{ emoji:'✨', texto:'Hay una diferencia entre ser agradable y ser inolvidable. Tú tienes algo que te acerca mucho más a lo segundo.' },
+
+{ emoji:'🌷', texto:'Cada vez que pienso en las cosas buenas que me ha dado la vida, inevitablemente termino pensando también en ti.' },
+
+{ emoji:'💖', texto:'La forma en que cuidas a quienes aprecias demuestra un corazón lleno de generosidad y sensibilidad.' },
+
+{ emoji:'🌙', texto:'Existen silencios incómodos y silencios tranquilos. La confianza verdadera suele sentirse como los segundos.' },
+
+{ emoji:'🎨', texto:'Tu manera de interpretar la realidad siempre aporta matices que otros pasan por alto.' },
+
+{ emoji:'🌊', texto:'Hay una profundidad en tu forma de ser que solo se descubre con el tiempo, y cada descubrimiento vale la pena.' },
+
+{ emoji:'💫', texto:'Lo mejor de algunas personas es que nunca dejan de sorprender para bien. Tú eres una de ellas.' },
+
+{ emoji:'🍃', texto:'Tu presencia tiene algo sereno que ayuda a poner en orden incluso los pensamientos más desordenados.' },
+
+{ emoji:'🌹', texto:'La admiración verdadera no necesita exageraciones; simplemente aparece cuando alguien demuestra constantemente quién es.' },
+
+{ emoji:'⭐', texto:'Hay cualidades tuyas que podrían pasar desapercibidas para muchos, pero que para quienes te conocen son imposibles de ignorar.' },
+
+{ emoji:'💞', texto:'Con el tiempo entendí que algunas de las mejores cosas de la vida llegan sin avisar. Conocerte fue una de ellas.' },
+
+{ emoji:'❤️', texto:'Si algo tengo claro es que el mundo necesita más personas con la sensibilidad, la empatía y la autenticidad que te caracterizan.' }
+,
+{ emoji:'💖', texto:'Hay personas que pasan por nuestra vida dejando recuerdos agradables, pero tú lograste algo más difícil: convertirte en una referencia de todo lo bueno que puede aportar alguien al corazón de otra persona.' },
+
+{ emoji:'🌸', texto:'A veces me sorprende pensar en la cantidad de momentos ordinarios que se volvieron extraordinarios simplemente porque estabas presente en ellos.' },
+
+{ emoji:'✨', texto:'Tu forma de enfrentar la vida demuestra que la verdadera grandeza no siempre hace ruido; muchas veces se encuentra en la constancia, la bondad y la humildad.' },
+
+{ emoji:'🌷', texto:'Lo que más valoro de ti no es una sola característica, sino la manera en que haces sentir importantes a las personas que forman parte de tu vida.' },
+
+{ emoji:'💫', texto:'Hay algo muy especial en quienes conservan su esencia a pesar del tiempo. Tú sigues siendo auténtico incluso cuando el mundo invita a fingir.' },
+
+{ emoji:'🌙', texto:'Cuando recuerdo conversaciones contigo, casi siempre descubro algo que sigue teniendo sentido mucho tiempo después de haber sido dicho.' },
+
+{ emoji:'💝', texto:'No todas las personas tienen el don de transmitir confianza desde el principio. Tú haces que la sinceridad parezca algo completamente natural.' },
+
+{ emoji:'🌺', texto:'La belleza más duradera no suele encontrarse en lo que se ve, sino en la forma en que alguien trata a los demás cuando no espera nada a cambio.' },
+
+{ emoji:'🌊', texto:'Tu capacidad para mantener la calma en momentos difíciles demuestra una fortaleza mucho más admirable que cualquier apariencia de perfección.' },
+
+{ emoji:'🦋', texto:'Conocerte fue descubrir que todavía existen personas capaces de aportar tranquilidad sin intentar controlar nada y alegría sin buscar protagonismo.' },
+
+{ emoji:'🎨', texto:'Tu personalidad tiene tantos matices interesantes que cada conversación parece mostrar una nueva versión de algo que ya admiraba.' },
+
+{ emoji:'🌻', texto:'Hay personas que inspiran por lo que han conseguido y otras que inspiran por la manera en que viven. Tú haces ambas cosas al mismo tiempo.' },
+
+{ emoji:'⭐', texto:'No importa cuántas personas conozca a lo largo de los años; siempre habrá algo en ti que te mantendrá ocupando un lugar único en mi memoria.' },
+
+{ emoji:'🍀', texto:'La suerte no siempre consiste en encontrar oportunidades; a veces consiste en encontrar personas que hacen la vida más bonita.' },
+
+{ emoji:'📖', texto:'Si pudiera señalar algunos capítulos importantes de mi historia, muchos tendrían relación con momentos en los que coincidí contigo.' },
+
+{ emoji:'💞', texto:'Tu forma de escuchar demuestra que realmente te importa comprender a los demás, y eso es una cualidad mucho más valiosa de lo que suele reconocerse.' },
+
+{ emoji:'🌈', texto:'Incluso cuando las circunstancias no son ideales, encuentras maneras de aportar esperanza y recordar que siempre existe una posibilidad más.' },
+
+{ emoji:'🎁', texto:'Las mejores sorpresas suelen llegar sin anuncio previo. Algunas veces toman la forma de personas que terminan significando muchísimo.' },
+
+{ emoji:'🤗', texto:'Hay una cercanía emocional en tu forma de ser que hace que las personas se sientan cómodas compartiendo lo que realmente piensan y sienten.' },
+
+{ emoji:'☀️', texto:'Tu energía positiva no nace de ignorar los problemas, sino de creer que siempre existe algo bueno que vale la pena rescatar.' },
+
+{ emoji:'🌿', texto:'A tu lado he aprendido que muchas de las cosas más importantes de la vida no necesitan ser complicadas para ser profundas.' },
+
+{ emoji:'💜', texto:'La autenticidad con la que enfrentas cada día es una de las razones por las que resulta tan fácil admirarte.' },
+
+{ emoji:'🎵', texto:'Algunas personas dejan frases memorables; tú dejas enseñanzas que aparecen justo cuando más se necesitan.' },
+
+{ emoji:'🌍', texto:'En medio de tantas diferencias que existen entre las personas, tu capacidad para conectar con los demás sigue siendo algo extraordinario.' },
+
+{ emoji:'❤️', texto:'Hay cualidades tuyas que podrían llenar páginas enteras, pero quizá la más importante sea tu capacidad para hacer el bien sin esperar reconocimiento.' },
+
+{ emoji:'🌸', texto:'Cada experiencia compartida contigo termina demostrando que la verdadera calidad humana se encuentra en los pequeños actos cotidianos.' },
+
+{ emoji:'💖', texto:'Tu presencia tiene una forma silenciosa de mejorar los días, incluso aquellos en los que parecía imposible encontrar algo positivo.' },
+
+{ emoji:'✨', texto:'La confianza que inspiras no se construye con promesas grandes, sino con la coherencia de tus acciones a lo largo del tiempo.' },
+
+{ emoji:'🌷', texto:'Lo admirable de ti no es solo lo que eres, sino también la manera en que ayudas a otros a sentirse mejor consigo mismos.' },
+
+{ emoji:'🌙', texto:'Hay recuerdos que pierden intensidad con los años y otros que permanecen vivos porque estuvieron acompañados por personas especiales.' },
+
+{ emoji:'💫', texto:'Tu forma de pensar suele aportar claridad donde antes había dudas, y tranquilidad donde antes había preocupación.' },
+
+{ emoji:'🌺', texto:'A veces las personas más importantes no son las que más hablan, sino las que más aportan cuando realmente importa.' },
+
+{ emoji:'🌊', texto:'Tu capacidad para adaptarte a los cambios demuestra una madurez que siempre he encontrado admirable.' },
+
+{ emoji:'🦋', texto:'Hay algo inspirador en la forma en que continúas creciendo sin perder la esencia que te hace tan especial.' },
+
+{ emoji:'🌻', texto:'Tu optimismo no ignora las dificultades; simplemente se niega a permitir que definan por completo la realidad.' },
+
+{ emoji:'⭐', texto:'Muchas personas son agradables de conocer, pero muy pocas dejan una impresión positiva que sigue creciendo con el tiempo.' },
+
+{ emoji:'💝', texto:'Si alguna vez me preguntaran qué significa la palabra calidad humana, probablemente terminaría describiendo muchas de tus cualidades.' },
+
+{ emoji:'🎨', texto:'Lo que más me impresiona de ti es la manera tan natural en que equilibras fortaleza, sensibilidad y empatía.' },
+
+{ emoji:'🌈', texto:'Hay una esperanza tranquila en tu manera de vivir que recuerda que incluso los días difíciles pueden traer algo bueno.' },
+
+{ emoji:'📖', texto:'Cada nuevo recuerdo contigo se suma a una colección de momentos que siguen teniendo un enorme valor para mí.' },
+
+{ emoji:'🍀', texto:'Conocerte fue una de esas coincidencias que terminan demostrando que algunas casualidades valen muchísimo más que cualquier plan.' },
+
+{ emoji:'🤗', texto:'Tu capacidad para acompañar a otros en momentos importantes es una de las razones por las que tantas personas te aprecian.' },
+
+{ emoji:'☀️', texto:'La mejor parte de algunas personas es que permanecen siendo ellas mismas sin importar dónde estén. Tú eres una de ellas.' },
+
+{ emoji:'🌿', texto:'Hay una serenidad en tu forma de actuar que ayuda a recordar que no todo necesita resolverse de inmediato.' },
+
+{ emoji:'💞', texto:'Lo que más valoro de nuestra conexión es la naturalidad con la que todo ha ido construyéndose con el tiempo.' },
+
+{ emoji:'💜', texto:'Existen personas que llaman la atención rápidamente y otras que se ganan el respeto poco a poco. Tú consigues ambas cosas.' },
+
+{ emoji:'🎵', texto:'Tus palabras suelen quedarse conmigo porque nacen de una honestidad que resulta cada vez más difícil de encontrar.' },
+
+{ emoji:'🌍', texto:'Si algo he aprendido con los años, es que las personas verdaderamente valiosas no abundan. Por eso aprecio tanto tu presencia.' },
+
+{ emoji:'❤️', texto:'Hay muchas razones para admirarte, pero una de las más importantes es la forma en que eliges actuar con bondad incluso cuando nadie te observa.' },
+
+{ emoji:'🌸', texto:'Al final, algunas personas se convierten en recuerdos bonitos y otras en parte de las historias que más valoramos. Tú perteneces claramente a las segundas.' }
+];
+
+function abrirModal(index) {
+  const data = frasesModal[index];
+  document.getElementById('modal-emoji').textContent = data.emoji;
+  document.getElementById('modal-texto').textContent = data.texto;
+
+  // Generate modal stars
+  const container = document.getElementById('modal-stars');
+  container.innerHTML = '';
+  for (let i = 0; i < 18; i++) {
+    const s = document.createElement('div');
+    s.className = 'modal-star';
+    s.style.cssText = `left:${Math.random()*100}%;top:${Math.random()*100}%;
+      --dur:${1.5+Math.random()*2.5}s;--op:${0.15+Math.random()*0.4};
+      width:${1+Math.random()*2}px;height:${1+Math.random()*2}px;`;
+    container.appendChild(s);
+  }
+
+  const modal = document.getElementById('frase-modal');
+  modal.classList.add('open');
+}
+
+function cerrarModal(e) {
+  if (!e || e.target === document.getElementById('frase-modal') || e.target === document.querySelector('.modal-backdrop') || !e.target) {
+    document.getElementById('frase-modal').classList.remove('open');
+  }
+}
+
+/* ======== UNIVERSE ======== */
+function initUniverse() {
+  const canvas = document.getElementById('universe-canvas');
+  const W = window.innerWidth, H = window.innerHeight;
+
+  const isMobile = window.innerWidth <= 600;
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: !isMobile });
+  renderer.setSize(W, H);
+  renderer.setPixelRatio(Math.min(devicePixelRatio, isMobile ? 1.5 : 2));
+  renderer.setClearColor(0x000000);
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(55, W/H, 0.1, 2000);
+  camera.position.set(0, 8, 58);
+
+  // -- GALAXY CORE: pure point clouds — no solid meshes that create dark blobs --
+  function makeCoreCloud(count, radius, r, g, b, opacity, ptSize) {
+    const geo = new THREE.BufferGeometry();
+    const pos = new Float32Array(count*3), col = new Float32Array(count*3);
+    for (let i = 0; i < count; i++) {
+      const th=Math.random()*Math.PI*2, ph=Math.acos(2*Math.random()-1);
+      const rad=Math.pow(Math.random(),0.4)*radius;
+      pos[i*3]=rad*Math.sin(ph)*Math.cos(th);
+      pos[i*3+1]=rad*Math.sin(ph)*Math.sin(th);
+      pos[i*3+2]=rad*Math.cos(ph);
+      const bri=0.6+Math.random()*0.4;
+      col[i*3]=r*bri; col[i*3+1]=g*bri; col[i*3+2]=b*bri;
+    }
+    geo.setAttribute('position',new THREE.BufferAttribute(pos,3));
+    geo.setAttribute('color',new THREE.BufferAttribute(col,3));
+    return new THREE.Points(geo,new THREE.PointsMaterial({size:ptSize,vertexColors:true,transparent:true,opacity,sizeAttenuation:true,depthWrite:false}));
+  }
+  // White-hot inner core
+  scene.add(makeCoreCloud(2200,1.2, 1,0.9,1, 0.9, 0.17));
+  // Bright hot-pink core
+  scene.add(makeCoreCloud(4000,3.0, 1,0.22,0.78, 0.72, 0.14));
+  // Soft magenta halo
+  scene.add(makeCoreCloud(5000,5.8, 1,0.08,0.65, 0.52, 0.12));
+  // Wide diffuse outer glow
+  scene.add(makeCoreCloud(3500,9.0, 0.85,0.05,0.58, 0.32, 0.1));
+
+  // -- NEBULA CLOUDS (point-based, no solid meshes) --
+  const nebDefs = [
+    {x:12,y:3,z:-8,  r:1,g:0.15,b:0.72, cnt:1200, rad:5},
+    {x:-14,y:-2,z:10, r:0.5,g:0.1,b:0.9, cnt:1000, rad:4},
+    {x:6,y:5,z:12,   r:0.8,g:0.2,b:1,   cnt:900,  rad:4.5},
+    {x:-8,y:4,z:-12,  r:0.2,g:0.5,b:1,   cnt:800,  rad:3.5},
+    {x:18,y:-3,z:4,  r:1,g:0.35,b:0.8,  cnt:700,  rad:3},
+  ];
+  nebDefs.forEach(n => {
+    const geo=new THREE.BufferGeometry();
+    const pos=new Float32Array(n.cnt*3),col=new Float32Array(n.cnt*3);
+    for(let i=0;i<n.cnt;i++){
+      const th=Math.random()*Math.PI*2,ph=Math.acos(2*Math.random()-1),rad=Math.pow(Math.random(),0.6)*n.rad;
+      pos[i*3]=n.x+rad*Math.sin(ph)*Math.cos(th);
+      pos[i*3+1]=n.y+rad*Math.sin(ph)*Math.sin(th);
+      pos[i*3+2]=n.z+rad*Math.cos(ph);
+      const bri=0.3+Math.random()*0.5;
+      col[i*3]=n.r*bri;col[i*3+1]=n.g*bri;col[i*3+2]=n.b*bri;
+    }
+    geo.setAttribute('position',new THREE.BufferAttribute(pos,3));
+    geo.setAttribute('color',new THREE.BufferAttribute(col,3));
+    scene.add(new THREE.Points(geo,new THREE.PointsMaterial({size:0.13,vertexColors:true,transparent:true,opacity:0.45,sizeAttenuation:true,depthWrite:false})));
+  });
+
+  // -- GALAXY SPIRAL (4-arm, pink/purple/blue palette) --
+  const GC = 22000;
+  const gGeo = new THREE.BufferGeometry();
+  const gPos = new Float32Array(GC*3), gCol = new Float32Array(GC*3);
+  for (let i = 0; i < GC; i++) {
+    const r = Math.pow(Math.random(), 0.5) * 42;
+    const arm = (i%4)*(Math.PI*2/4);
+    const spin = r*0.28, spread = 0.5;
+    const angle = arm + spin + (Math.random()-0.5)*spread*(1+r/18);
+    gPos[i*3]   = Math.cos(angle)*r + (Math.random()-0.5)*spread*r*0.35;
+    gPos[i*3+1] = (Math.random()-0.5)*1.6*(1-r/42*0.55);
+    gPos[i*3+2] = Math.sin(angle)*r + (Math.random()-0.5)*spread*r*0.35;
+    const t = r/42;
+    if (t < 0.1) {
+      // core: white-pink
+      gCol[i*3]=1; gCol[i*3+1]=0.8; gCol[i*3+2]=0.9;
+    } else if (t < 0.35) {
+      // inner arms: bright pink
+      gCol[i*3]=1; gCol[i*3+1]=0.25+t*0.3; gCol[i*3+2]=0.6+t*0.2;
+    } else if (t < 0.65) {
+      // mid arms: purple-pink
+      gCol[i*3]=0.85; gCol[i*3+1]=0.15; gCol[i*3+2]=0.65+t*0.2;
+    } else {
+      // outer: blue-purple
+      gCol[i*3]=0.35+t*0.3; gCol[i*3+1]=0.2+t*0.4; gCol[i*3+2]=0.8+t*0.2;
+    }
+  }
+  gGeo.setAttribute('position', new THREE.BufferAttribute(gPos,3));
+  gGeo.setAttribute('color', new THREE.BufferAttribute(gCol,3));
+  const gMat = new THREE.PointsMaterial({size:0.11,vertexColors:true,transparent:true,opacity:0.92,sizeAttenuation:true});
+  const galaxy = new THREE.Points(gGeo, gMat);
+  scene.add(galaxy);
+
+  // -- GALAXY DUST LAYER (extra thickness) --
+  const DC = 6000;
+  const dGeo = new THREE.BufferGeometry();
+  const dPos = new Float32Array(DC*3), dCol = new Float32Array(DC*3);
+  for (let i = 0; i < DC; i++) {
+    const r = Math.pow(Math.random(),0.7)*38;
+    const angle = Math.random()*Math.PI*2;
+    dPos[i*3]   = Math.cos(angle)*r + (Math.random()-0.5)*r*0.3;
+    dPos[i*3+1] = (Math.random()-0.5)*0.8;
+    dPos[i*3+2] = Math.sin(angle)*r + (Math.random()-0.5)*r*0.3;
+    dCol[i*3]=0.6+Math.random()*0.4; dCol[i*3+1]=0.1+Math.random()*0.2; dCol[i*3+2]=0.4+Math.random()*0.4;
+  }
+  dGeo.setAttribute('position', new THREE.BufferAttribute(dPos,3));
+  dGeo.setAttribute('color', new THREE.BufferAttribute(dCol,3));
+  scene.add(new THREE.Points(dGeo, new THREE.PointsMaterial({size:0.07,vertexColors:true,transparent:true,opacity:0.45})));
+
+  // -- HEART --
+  const HC = 8000;
+  const hGeo = new THREE.BufferGeometry();
+  const hPos = new Float32Array(HC*3), hCol = new Float32Array(HC*3);
+  const hT = [];
+  for (let i = 0; i < HC; i++) {
+    const t = (i/HC)*Math.PI*2;
+    const s = 0.62;
+    const tx = 16*Math.pow(Math.sin(t),3)*s + (Math.random()-0.5)*0.4;
+    const ty = (13*Math.cos(t)-5*Math.cos(2*t)-2*Math.cos(3*t)-Math.cos(4*t))*s + (Math.random()-0.5)*0.4;
+    const tz = (Math.random()-0.5)*1.6;
+    hT.push(tx, ty, tz);
+    hPos[i*3]=(Math.random()-0.5)*70; hPos[i*3+1]=(Math.random()-0.5)*70; hPos[i*3+2]=(Math.random()-0.5)*70;
+    // Pure pink/magenta palette — no orange
+    const bright = 0.7 + Math.random()*0.3;
+    const mix = Math.random();
+    hCol[i*3]  = bright;
+    hCol[i*3+1]= 0.05 + mix*0.25;
+    hCol[i*3+2]= 0.5*bright + mix*0.4;
+  }
+  hGeo.setAttribute('position', new THREE.BufferAttribute(hPos,3));
+  hGeo.setAttribute('color', new THREE.BufferAttribute(hCol,3));
+  const hMat = new THREE.PointsMaterial({size:0.22,vertexColors:true,transparent:true,opacity:1,sizeAttenuation:true});
+  const heartPts = new THREE.Points(hGeo, hMat);
+  heartPts.position.y = 7;
+  scene.add(heartPts);
+
+  // -- DEEP BACKGROUND STARS --
+  const SC = 7000;
+  const sGeo = new THREE.BufferGeometry();
+  const sPos = new Float32Array(SC*3), sCols = new Float32Array(SC*3);
+  for (let i = 0; i < SC; i++) {
+    const r = 100 + Math.random()*180;
+    const th = Math.random()*Math.PI*2, ph = Math.acos(2*Math.random()-1);
+    sPos[i*3]=r*Math.sin(ph)*Math.cos(th);
+    sPos[i*3+1]=r*Math.sin(ph)*Math.sin(th);
+    sPos[i*3+2]=r*Math.cos(ph);
+    const c=[[1,1,1],[1,0.9,0.95],[0.8,0.8,1],[1,0.75,0.9],[0.9,0.7,1]][Math.floor(Math.random()*5)];
+    sCols[i*3]=c[0]; sCols[i*3+1]=c[1]; sCols[i*3+2]=c[2];
+  }
+  sGeo.setAttribute('position', new THREE.BufferAttribute(sPos,3));
+  sGeo.setAttribute('color', new THREE.BufferAttribute(sCols,3));
+  scene.add(new THREE.Points(sGeo, new THREE.PointsMaterial({size:0.38,vertexColors:true,transparent:true,opacity:0.8})));
+
+  // -- FLOATING SPARKLES --
+  const PKC = 3000;
+  const pkGeo = new THREE.BufferGeometry();
+  const pkPos = new Float32Array(PKC*3), pkCol = new Float32Array(PKC*3);
+  const pkVel = [];
+  const pkColors=[[1,0.2,0.8],[0.85,0.1,0.6],[1,0.35,0.75],[0.6,0.15,1],[0.9,0.5,1],[0.3,0.6,1],[1,0.6,0.9]];
+  for (let i = 0; i < PKC; i++) {
+    pkPos[i*3]=(Math.random()-0.5)*55;
+    pkPos[i*3+1]=(Math.random()-0.5)*38;
+    pkPos[i*3+2]=(Math.random()-0.5)*20;
+    const c=pkColors[Math.floor(Math.random()*pkColors.length)];
+    pkCol[i*3]=c[0]; pkCol[i*3+1]=c[1]; pkCol[i*3+2]=c[2];
+    pkVel.push((Math.random()-0.5)*0.014, 0.004+Math.random()*0.011, (Math.random()-0.5)*0.007);
+  }
+  pkGeo.setAttribute('position', new THREE.BufferAttribute(pkPos,3));
+  pkGeo.setAttribute('color', new THREE.BufferAttribute(pkCol,3));
+  const pkPts = new THREE.Points(pkGeo, new THREE.PointsMaterial({size:0.2,vertexColors:true,transparent:true,opacity:0.85}));
+  scene.add(pkPts);
+
+  // -- ORBIT RINGS (pink/purple palette) --
+  [[10,0xff3cac,0.22,0.3,0.1],[16,0xc1007e,0.16,0.5,0.3],[23,0x784ba0,0.13,0.8,0.6],[30,0x2b86c5,0.08,1.1,0.9]].forEach(([rad,col,op,rx,rz])=>{
+    const rg = new THREE.RingGeometry(rad, rad+0.3, 128);
+    const rm = new THREE.MeshBasicMaterial({color:col,side:THREE.DoubleSide,transparent:true,opacity:op});
+    const mesh = new THREE.Mesh(rg, rm);
+    mesh.rotation.x = Math.PI/2+rx; mesh.rotation.z = rz;
+    scene.add(mesh);
+  });
+
+  // -- LABEL SPRITES (clickable) --
+  const labelSprites = [];
+  const lblColors = ['#ff88cc','#ff55bb','#dd44ff','#88aaff','#ff44aa','#cc77ff','#ffaadd','#55ddff','#ff66bb','#aa55ff'];
+
+  function makeSprite(text, color, index) {
+    const lc = document.createElement('canvas');
+    lc.width = 560; lc.height = 100;
+    const ctx = lc.getContext('2d');
+    ctx.clearRect(0,0,560,100);
+
+    // Subtle background pill
+    ctx.fillStyle = 'rgba(0,0,0,0.22)';
+    ctx.beginPath();
+    ctx.roundRect(10, 18, 540, 64, 18);
+    ctx.fill();
+
+    ctx.font = 'bold 26px Georgia,serif';
+    ctx.fillStyle = color;
+    ctx.shadowColor = color;
+    ctx.shadowBlur = 22;
+    ctx.textAlign = 'center';
+    ctx.fillText(text, 280, 60);
+
+    // Sparkle dots
+    ctx.shadowBlur = 0;
+    ctx.fillStyle = color;
+    ctx.globalAlpha = 0.6;
+    for (let i = 0; i < 3; i++) {
+      ctx.beginPath();
+      ctx.arc(40+i*240, 15+Math.random()*70, 2, 0, Math.PI*2);
+      ctx.fill();
+    }
+    ctx.globalAlpha = 1;
+
+    const tex = new THREE.CanvasTexture(lc);
+    const mat = new THREE.SpriteMaterial({map:tex,transparent:true,opacity:0.88,depthWrite:false});
+    const sp = new THREE.Sprite(mat);
+    sp.scale.set(9,1.8,1);
+    sp.userData.phraseIndex = index;
+    sp.userData.isLabel = true;
+    return sp;
+  }
+
+  frasesModal.forEach((f, i) => {
+    // Short label for display (first 2-3 words + emoji)
+    const words = f.texto.split(' ');
+    const shortLabel = words.slice(0,4).join(' ') + '… ' + f.emoji;
+    const col = lblColors[i % lblColors.length];
+    const sp = makeSprite(shortLabel, col, i);
+    const r = 26 + Math.random()*18;
+    const theta = Math.random()*Math.PI*2;
+    const phi = Math.acos(2*Math.random()-1);
+    sp.position.set(r*Math.sin(phi)*Math.cos(theta), r*Math.sin(phi)*Math.sin(theta)+4, r*Math.cos(phi));
+    sp.userData.r=r; sp.userData.theta=theta; sp.userData.phi=phi;
+    sp.userData.speed=0.0002+Math.random()*0.0003;
+    sp.userData.phiSpeed=(Math.random()-0.5)*0.0002;
+    sp.userData.amp=Math.random()*2.5;
+    sp.userData.offset=Math.random()*Math.PI*2;
+    scene.add(sp);
+    labelSprites.push(sp);
+  });
+
+  // -- RAYCASTER for click on labels --
+  const raycaster = new THREE.Raycaster();
+  const mouse = new THREE.Vector2();
+  let mouseDownPos = { x: 0, y: 0 };
+
+  canvas.addEventListener('mousedown', e => {
+    mouseDownPos = { x: e.clientX, y: e.clientY };
+  });
+
+  canvas.addEventListener('click', e => {
+    const dx = Math.abs(e.clientX - mouseDownPos.x);
+    const dy = Math.abs(e.clientY - mouseDownPos.y);
+    if (dx > 5 || dy > 5) return; // was a drag, not a click
+
+    mouse.x = (e.clientX / window.innerWidth)*2 - 1;
+    mouse.y = -(e.clientY / window.innerHeight)*2 + 1;
+    raycaster.setFromCamera(mouse, camera);
+    const hits = raycaster.intersectObjects(labelSprites);
+    if (hits.length > 0 && hits[0].object.userData.isLabel) {
+      abrirModal(hits[0].object.userData.phraseIndex);
+    } else {
+      // Firework on empty click
+      spawnFW((Math.random()-0.5)*20, Math.random()*12, (Math.random()-0.5)*6);
+    }
+  });
+
+  // Touch tap for labels
+  let touchStartPos = { x: 0, y: 0 };
+  canvas.addEventListener('touchstart', e => {
+    if (e.touches.length === 1) {
+      touchStartPos = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+    }
+  }, { passive: false });
+
+  // -- FIREWORKS --
+  const fireworks = [];
+  function spawnFW(x, y, z) {
+    const n = isMobile ? 180 : 380;
+    const geo = new THREE.BufferGeometry();
+    const p = new Float32Array(n*3), c = new Float32Array(n*3), v = [];
+    const hue = [[1,0.2,0.8],[0.9,0.1,0.6],[1,0.6,0.9],[0.5,0.2,1],[0.8,0.4,1],[0.3,0.7,1]][Math.floor(Math.random()*6)];
+    for (let i = 0; i < n; i++) {
+      const th=Math.random()*Math.PI*2, ph=Math.random()*Math.PI, sp=0.05+Math.random()*0.24;
+      v.push(Math.sin(ph)*Math.cos(th)*sp, Math.sin(ph)*Math.sin(th)*sp, Math.cos(ph)*sp);
+      p[i*3]=x; p[i*3+1]=y; p[i*3+2]=z;
+      c[i*3]=hue[0]; c[i*3+1]=hue[1]; c[i*3+2]=hue[2];
+    }
+    geo.setAttribute('position', new THREE.BufferAttribute(p,3));
+    geo.setAttribute('color', new THREE.BufferAttribute(c,3));
+    const mat = new THREE.PointsMaterial({size:0.3,vertexColors:true,transparent:true,opacity:1,sizeAttenuation:true});
+    const pts = new THREE.Points(geo, mat);
+    scene.add(pts);
+    fireworks.push({pts, v, life:1});
+  }
+  setInterval(()=>{ spawnFW((Math.random()-0.5)*24, Math.random()*14-2, (Math.random()-0.5)*10); }, isMobile ? 3500 : 2000);
+
+  // -- ORBIT CONTROLS --
+  let isDrag=false, isPan=false;
+  let prev = {x:0, y:0};
+  let sph = {theta:0.3, phi:1.4, r:58};
+  const target = new THREE.Vector3(0, 4, 0);
+
+  function updateCam() {
+    const x=sph.r*Math.sin(sph.phi)*Math.sin(sph.theta);
+    const y=sph.r*Math.cos(sph.phi);
+    const z=sph.r*Math.sin(sph.phi)*Math.cos(sph.theta);
+    camera.position.set(x+target.x, y+target.y, z+target.z);
+    camera.lookAt(target);
+  }
+  updateCam();
+
+  let dragStarted = false;
+  canvas.addEventListener('mousedown', e => {
+    e.button===2 ? isPan=true : isDrag=true;
+    prev={x:e.clientX, y:e.clientY};
+    dragStarted=false;
+    e.preventDefault();
+  });
+  canvas.addEventListener('contextmenu', e => e.preventDefault());
+  window.addEventListener('mouseup', ()=>{ isDrag=false; isPan=false; });
+  window.addEventListener('mousemove', e => {
+    const dx=e.clientX-prev.x, dy=e.clientY-prev.y;
+    if (isDrag) {
+      if (Math.abs(dx)>2||Math.abs(dy)>2) dragStarted=true;
+      sph.theta-=dx*0.005;
+      sph.phi=Math.max(0.05,Math.min(Math.PI-0.05,sph.phi+dy*0.005));
+      updateCam();
+    }
+    if (isPan) {
+      const dir=new THREE.Vector3(); camera.getWorldDirection(dir);
+      const right=new THREE.Vector3().crossVectors(dir,camera.up).normalize();
+      const up2=new THREE.Vector3().crossVectors(right,dir).normalize();
+      target.addScaledVector(right,-dx*0.06); target.addScaledVector(up2,dy*0.06); updateCam();
+    }
+    prev={x:e.clientX,y:e.clientY};
+  });
+  canvas.addEventListener('wheel',e=>{
+    sph.r=Math.max(8,Math.min(140,sph.r+e.deltaY*0.06));
+    updateCam(); e.preventDefault();
+  },{passive:false});
+
+  // Touch
+  let ltd=null, ltt=null, td=false;
+  canvas.addEventListener('touchstart',e=>{
+    if(e.touches.length===1){td=true;ltt={x:e.touches[0].clientX,y:e.touches[0].clientY};}
+    if(e.touches.length===2){td=false;const dx=e.touches[0].clientX-e.touches[1].clientX,dy=e.touches[0].clientY-e.touches[1].clientY;ltd=Math.sqrt(dx*dx+dy*dy);}
+    e.preventDefault();
+  },{passive:false});
+  canvas.addEventListener('touchmove',e=>{
+    if(e.touches.length===1&&td&&ltt){
+      const dx=e.touches[0].clientX-ltt.x,dy=e.touches[0].clientY-ltt.y;
+      sph.theta-=dx*0.006;sph.phi=Math.max(0.05,Math.min(Math.PI-0.05,sph.phi+dy*0.006));
+      updateCam();ltt={x:e.touches[0].clientX,y:e.touches[0].clientY};
+    }
+    if(e.touches.length===2){
+      const dx=e.touches[0].clientX-e.touches[1].clientX,dy=e.touches[0].clientY-e.touches[1].clientY;
+      const d=Math.sqrt(dx*dx+dy*dy);
+      if(ltd){sph.r=Math.max(8,Math.min(140,sph.r-(d-ltd)*0.15));updateCam();}ltd=d;
+    }
+    e.preventDefault();
+  },{passive:false});
+  canvas.addEventListener('touchend',e=>{
+    // Tap to open label modal
+    if(e.changedTouches.length===1&&td){
+      const t=e.changedTouches[0];
+      const dx=Math.abs(t.clientX-touchStartPos.x),dy=Math.abs(t.clientY-touchStartPos.y);
+      if(dx<8&&dy<8){
+        mouse.x=(t.clientX/window.innerWidth)*2-1;
+        mouse.y=-(t.clientY/window.innerHeight)*2+1;
+        raycaster.setFromCamera(mouse,camera);
+        const hits=raycaster.intersectObjects(labelSprites);
+        if(hits.length>0&&hits[0].object.userData.isLabel){
+          abrirModal(hits[0].object.userData.phraseIndex);
+        }
+      }
+    }
+    td=false;ltd=null;
+  });
+
+  // -- ANIMATE --
+  const clock = new THREE.Clock();
+  let ht = 0;
+  (function animate() {
+    requestAnimationFrame(animate);
+    const time = clock.getElapsedTime();
+
+    galaxy.rotation.y = time*0.038;
+
+    // Heart form animation
+    ht += 0.016;
+    const hp = heartPts.geometry.attributes.position.array;
+    const prog = Math.min(ht/5,1);
+    const ease = prog<0.5?2*prog*prog:-1+(4-2*prog)*prog;
+    for (let i = 0; i < HC; i++) {
+      hp[i*3]   += (hT[i*3]   - hp[i*3])   * (0.022+ease*0.04);
+      hp[i*3+1] += (hT[i*3+1] - hp[i*3+1]) * (0.022+ease*0.04);
+      hp[i*3+2] += (hT[i*3+2] - hp[i*3+2]) * (0.022+ease*0.04);
+    }
+    heartPts.geometry.attributes.position.needsUpdate = true;
+    const pulse = 1 + Math.sin(time*2)*0.04;
+    heartPts.scale.set(pulse, pulse, pulse);
+
+    // Sparkles
+    const pk = pkPts.geometry.attributes.position.array;
+    for (let i = 0; i < PKC; i++) {
+      pk[i*3]   += pkVel[i*3];
+      pk[i*3+1] += pkVel[i*3+1];
+      pk[i*3+2] += pkVel[i*3+2];
+      pk[i*3]   += Math.sin(time*0.4+i*0.1)*0.003;
+      if (pk[i*3+1] > 20) { pk[i*3+1]=-16; pk[i*3]=(Math.random()-0.5)*55; pk[i*3+2]=(Math.random()-0.5)*20; }
+    }
+    pkPts.geometry.attributes.position.needsUpdate = true;
+
+    // Labels orbit
+    labelSprites.forEach((sp, i) => {
+      const ud = sp.userData;
+      ud.theta += ud.speed;
+      ud.phi   += ud.phiSpeed;
+      ud.phi = Math.max(0.1, Math.min(Math.PI-0.1, ud.phi));
+      const r = ud.r + Math.sin(time*0.25+ud.offset)*ud.amp;
+      sp.position.x = r*Math.sin(ud.phi)*Math.cos(ud.theta);
+      sp.position.y = r*Math.sin(ud.phi)*Math.sin(ud.theta)+4;
+      sp.position.z = r*Math.cos(ud.phi);
+      sp.material.opacity = 0.55 + Math.sin(time*0.9+ud.offset)*0.38;
+    });
+
+    // Fireworks
+    for (let fi = fireworks.length-1; fi >= 0; fi--) {
+      const fw = fireworks[fi]; fw.life -= 0.011;
+      fw.pts.material.opacity = fw.life;
+      const fp = fw.pts.geometry.attributes.position.array;
+      for (let j = 0; j < fp.length/3; j++) {
+        fp[j*3]  +=fw.v[j*3]; fp[j*3+1]+=fw.v[j*3+1]-0.003; fp[j*3+2]+=fw.v[j*3+2];
+        fw.v[j*3]*=0.977; fw.v[j*3+1]*=0.977; fw.v[j*3+2]*=0.977;
+      }
+      fw.pts.geometry.attributes.position.needsUpdate = true;
+      if (fw.life <= 0) { scene.remove(fw.pts); fw.pts.geometry.dispose(); fw.pts.material.dispose(); fireworks.splice(fi,1); }
+    }
+
+    renderer.render(scene, camera);
+  })();
+
+  window.addEventListener('resize', ()=>{
+    const W2=window.innerWidth, H2=window.innerHeight;
+    camera.aspect=W2/H2; camera.updateProjectionMatrix();
+    renderer.setSize(W2,H2);
+  });
+}
+</script>
+</body>
+</html>
